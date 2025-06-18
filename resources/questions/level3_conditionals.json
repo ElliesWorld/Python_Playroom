@@ -1,0 +1,51 @@
+{
+    "level_info": {
+        "id": 3,
+        "name": "Conditionals & Logic",
+        "description": "Master if statements and logical operations",
+        "time_per_question": 40,
+        "total_questions": 3,
+        "difficulty": "Intermediate"
+    },
+    "questions": [
+        {
+            "id": 1,
+            "question_text": "What is the correct syntax for an if statement in Python?",
+            "options": [
+                "if (x == 5) { }",
+                "if x == 5:",
+                "if x == 5 then:",
+                "if (x == 5):"
+            ],
+            "correct_answer": 1,
+            "explanation": "Python if statements end with a colon (:) and don't require parentheses around the condition, though they're allowed.",
+            "topic": "If Statements"
+        },
+        {
+            "id": 2,
+            "question_text": "Which operator is used for 'not equal to' in Python?",
+            "options": [
+                "<>",
+                "!=",
+                "=/=",
+                "not="
+            ],
+            "correct_answer": 1,
+            "explanation": "Python uses != for 'not equal to' comparisons. The <> operator was used in older Python versions but is no longer valid.",
+            "topic": "Comparison Operators"
+        },
+        {
+            "id": 3,
+            "question_text": "What does the 'elif' keyword stand for in Python?",
+            "options": [
+                "else if",
+                "end if",
+                "exit if",
+                "error if"
+            ],
+            "correct_answer": 0,
+            "explanation": "'elif' is short for 'else if' and is used to check multiple conditions in sequence.",
+            "topic": "Conditional Logic"
+        }
+    ]
+}

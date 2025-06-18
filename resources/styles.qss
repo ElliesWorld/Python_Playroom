@@ -1,0 +1,295 @@
+/* Main Window */
+QMainWindow {
+    background: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1,
+                               stop: 0 #667eea, stop: 1 #764ba2);
+    color: #ffffff;
+}
+
+/* Welcome Screen */
+QWidget#welcome_screen {
+    background: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1,
+                               stop: 0 #667eea, stop: 1 #764ba2);
+    padding: 20px;
+}
+
+/* Title Label */
+QLabel#title_label {
+    font-size: 28px;
+    font-weight: bold;
+    color: #ffffff;
+    margin: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+/* Instructions Label */
+QLabel#instructions_label {
+    font-size: 16px;
+    color: #2c3e50;
+    margin: 15px;
+    line-height: 1.5;
+    background-color: rgba(255,255,255,0.9);
+    padding: 15px;
+    border-radius: 10px;
+    font-weight: 500;
+}
+
+/* Level Buttons - Brighter Pop Colors */
+QPushButton#level_button {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                               stop: 0 #00b894, stop: 1 #00cec9);
+    color: #ffffff;
+    border: none;
+    padding: 8px 16px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 20px;
+    margin: 3px;
+    min-height: 25px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
+    border: 2px solid rgba(255,255,255,0.3);
+}
+
+QPushButton#level_button:hover {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                               stop: 0 #00a085, stop: 1 #00b8b8);
+    border: 2px solid rgba(255,255,255,0.5);
+}
+
+QPushButton#level_button:pressed {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                               stop: 0 #008f73, stop: 1 #009a9a);
+}
+
+QPushButton#level_button:disabled {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                               stop: 0 #888888, stop: 1 #bbbbbb);
+    color: #cccccc;
+}
+
+/* Scroll Area for Levels - More Visible */
+QScrollArea {
+    background: rgba(255,255,255,0.1);
+    border: 2px solid rgba(255,255,255,0.3);
+    border-radius: 15px;
+    padding: 10px;
+}
+
+QScrollBar:vertical {
+    background: rgba(255,255,255,0.2);
+    width: 12px;
+    border-radius: 6px;
+}
+
+QScrollBar::handle:vertical {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                               stop: 0 #ff6b6b, stop: 1 #feca57);
+    border-radius: 6px;
+    min-height: 20px;
+}
+
+QScrollBar::handle:vertical:hover {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                               stop: 0 #ff5252, stop: 1 #feb347);
+}
+
+/* Quiz Screen */
+QWidget#quiz_screen {
+    background: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1,
+                               stop: 0 #ffecd2, stop: 1 #fcb69f);
+    padding: 20px;
+}
+
+/* Smiley Face Label - Add this to your code */
+QLabel#smiley_label {
+    font-size: 48px;
+    margin: 10px;
+    text-align: center;
+}
+
+/* Question Label */
+QLabel#question_label {
+    font-size: 18px;
+    font-weight: bold;
+    color: #2c3e50;
+    margin: 20px 0;
+    padding: 20px;
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                               stop: 0 #ffffff, stop: 1 #f8f9fa);
+    border-radius: 15px;
+    border: 2px solid #e9ecef;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Progress Label */
+QLabel#progress_label {
+    font-size: 14px;
+    color: #ffffff;
+    font-weight: bold;
+    margin: 10px 0;
+    padding: 8px 15px;
+    background: rgba(44, 62, 80, 0.8);
+    border-radius: 15px;
+    border: 2px solid rgba(255,255,255,0.3);
+}
+
+/* Timer Label - Green (>10s), Yellow (5-10s), Red (<5s) */
+QLabel#timer_label {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 10px 0;
+    padding: 8px 15px;
+    border-radius: 20px;
+    border: 2px solid;
+}
+
+/* Timer states - add these classes in C++ code */
+QLabel#timer_label[timerState="green"] {
+    color: #00b894;
+    background: rgba(0, 184, 148, 0.1);
+    border-color: #00b894;
+}
+
+QLabel#timer_label[timerState="yellow"] {
+    color: #fdcb6e;
+    background: rgba(253, 203, 110, 0.1);
+    border-color: #fdcb6e;
+}
+
+QLabel#timer_label[timerState="red"] {
+    color: #e17055;
+    background: rgba(225, 112, 85, 0.1);
+    border-color: #e17055;
+}
+
+/* Timer Label - Add clock symbol in code */
+QLabel#timer_label::before {
+    content: "🕐 ";
+}
+
+/* Radio Buttons - Checkbox Style - Fixed to not be pre-selected */
+QRadioButton {
+    font-size: 16px;
+    color: #2c3e50;
+    margin: 10px 0;
+    padding: 12px 15px;
+    background: rgba(255,255,255,0.9);
+    border-radius: 10px;
+    border: 2px solid #ddd;
+}
+
+QRadioButton:hover {
+    background: rgba(116, 185, 255, 0.1);
+    border-color: #74b9ff;
+}
+
+QRadioButton::indicator {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+QRadioButton::indicator:unchecked {
+    border: 3px solid #74b9ff;
+    border-radius: 4px;
+    background-color: #ffffff;
+}
+
+QRadioButton::indicator:checked {
+    border: 3px solid #00b894;
+    border-radius: 4px;
+    background-color: #00b894;
+    image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEzLjg1IDQuMTVMMy41IDE0LjVMMi4xNSAxMy4xNUw2IDkuM0wxMy44NSA0LjE1WiIgZmlsbD0id2hpdGUiLz4KPHN2Zz4K);
+}
+
+/* Action Buttons - Colorful Bottom Buttons */
+QPushButton#back_button {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                               stop: 0 #fd79a8, stop: 1 #e84393);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 25px;
+    margin: 8px;
+    min-width: 140px;
+}
+
+QPushButton#back_button:hover {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                               stop: 0 #fc6c9b, stop: 1 #dc2f7a);
+}
+
+QPushButton#learn_more_button {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                               stop: 0 #fdcb6e, stop: 1 #e17055);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 25px;
+    margin: 8px;
+    min-width: 140px;
+}
+
+QPushButton#learn_more_button:hover {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                               stop: 0 #fcbf5b, stop: 1 #d63031);
+}
+
+QPushButton#next_button {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                               stop: 0 #74b9ff, stop: 1 #0984e3);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 25px;
+    margin: 8px;
+    min-width: 140px;
+}
+
+QPushButton#next_button:hover {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                               stop: 0 #5faef7, stop: 1 #0770c4);
+}
+
+/* Results Screen */
+QWidget#results_screen {
+    background: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1,
+                               stop: 0 #a8edea, stop: 1 #fed6e3);
+    padding: 20px;
+}
+
+QLabel#score_label {
+    font-size: 28px;
+    font-weight: bold;
+    color: #00b894;
+    margin: 20px 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+/* Results Screen Action Button - Same size as level button, different color */
+QPushButton#action_button {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                               stop: 0 #74b9ff, stop: 1 #0984e3);
+    color: #ffffff;
+    border: none;
+    padding: 8px 16px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 20px;
+    margin: 3px;
+    min-height: 25px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
+    border: 2px solid rgba(255,255,255,0.3);
+}
+
+QPushButton#action_button:hover {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                               stop: 0 #5faef7, stop: 1 #0770c4);
+    border: 2px solid rgba(255,255,255,0.5);
+}

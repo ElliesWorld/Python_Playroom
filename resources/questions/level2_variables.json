@@ -1,0 +1,51 @@
+{
+    "level_info": {
+        "id": 2,
+        "name": "Variables & Data Types",
+        "description": "Learn about Python variables and basic data types",
+        "time_per_question": 30,
+        "total_questions": 3,
+        "difficulty": "Beginner"
+    },
+    "questions": [
+        {
+            "id": 1,
+            "question_text": "Which is the correct way to create a variable in Python?",
+            "options": [
+                "var x = 5",
+                "int x = 5",
+                "x = 5",
+                "variable x = 5"
+            ],
+            "correct_answer": 2,
+            "explanation": "In Python, you simply assign a value to a variable name. No declaration keywords like 'var' or type specifications are needed.",
+            "topic": "Variable Declaration"
+        },
+        {
+            "id": 2,
+            "question_text": "What data type is the value 3.14 in Python?",
+            "options": [
+                "int",
+                "float",
+                "double",
+                "decimal"
+            ],
+            "correct_answer": 1,
+            "explanation": "In Python, decimal numbers like 3.14 are automatically treated as float data type.",
+            "topic": "Data Types"
+        },
+        {
+            "id": 3,
+            "question_text": "Which function is used to check the type of a variable in Python?",
+            "options": [
+                "typeof()",
+                "type()",
+                "gettype()",
+                "check_type()"
+            ],
+            "correct_answer": 1,
+            "explanation": "The type() function returns the data type of a variable or value in Python.",
+            "topic": "Type Checking"
+        }
+    ]
+}

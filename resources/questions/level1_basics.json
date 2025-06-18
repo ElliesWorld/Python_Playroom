@@ -1,0 +1,51 @@
+{
+    "level_info": {
+        "id": 1,
+        "name": "Python Basics",
+        "description": "Introduction to Python syntax and concepts",
+        "time_per_question": 20,
+        "total_questions": 3,
+        "difficulty": "Beginner"
+    },
+    "questions": [
+        {
+            "id": 1,
+            "question_text": "What does Python use to indicate code blocks?",
+            "options": [
+                "Curly braces { }",
+                "Indentation",
+                "Parentheses ( )",
+                "Square brackets [ ]"
+            ],
+            "correct_answer": 1,
+            "explanation": "Python uses indentation (spaces or tabs) to define code blocks, unlike languages like C++ or Java that use braces.",
+            "topic": "Python Syntax"
+        },
+        {
+            "id": 2,
+            "question_text": "Which of the following is a valid Python comment?",
+            "options": [
+                "// This is a comment",
+                "/* This is a comment */",
+                "# This is a comment",
+                "<!-- This is a comment -->"
+            ],
+            "correct_answer": 2,
+            "explanation": "Python uses the hash symbol (#) for single-line comments. Multi-line comments use triple quotes.",
+            "topic": "Comments"
+        },
+        {
+            "id": 3,
+            "question_text": "What is the correct file extension for Python files?",
+            "options": [
+                ".python",
+                ".pyt",
+                ".py",
+                ".pt"
+            ],
+            "correct_answer": 2,
+            "explanation": "Python files use the .py extension. This tells the system that the file contains Python code.",
+            "topic": "File Extensions"
+        }
+    ]
+}

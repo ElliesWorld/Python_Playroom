@@ -1,0 +1,36 @@
+cmake_minimum_required(VERSION 3.16)
+project(python_quiz)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+find_package(Qt6 REQUIRED COMPONENTS Core Widgets)
+
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTORCC ON)
+set(CMAKE_AUTOUIC ON)
+
+qt6_add_executable(python_quiz
+    src/main.cpp
+    src/main_window.cpp
+    src/main_window.h
+    src/quiz.cpp
+    src/quiz.h
+    src/questions.cpp
+    src/questions.h
+)
+
+qt6_add_resources(python_quiz "resources"
+    PREFIX "/"
+    BASE "resources"
+    FILES
+        resources/config.json
+        resources/styles.qss
+        resources/questions/level1_basics.json
+        resources/questions/level2_variables.json
+        resources/questions/level3_conditionals.json
+        resources/questions/level4_loops.json
+        resources/questions/level5_functions.json
+)
+
+target_link_libraries(python_quiz PRIVATE Qt6::Core Qt6::Widgets)
