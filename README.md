@@ -1,6 +1,3 @@
-# Python_Playroom
-Python Quiz
-
 # 🐍 Python Learning Quiz
 
 A interactive quiz application designed to help aspiring developers learn Python programming.
@@ -56,7 +53,7 @@ sudo apt install qt6-base-dev qt6-tools-dev
 1. **Clone the repository**
 
    ```bash
-   git clone <repository-url>
+   git clone <https://github.com/ElliesWorld/Python_Playroom.git>
    cd Python_Playroom
    ```
 
