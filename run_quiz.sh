@@ -34,6 +34,10 @@ fi
 
 print_status "Starting Python Quiz Build Process..."
 
+# Set Qt6 paths
+export PATH="/c/Qt/6.9.1/mingw_64/bin:$PATH"
+export CMAKE_PREFIX_PATH="C:/Qt/6.9.1/mingw_64"
+
 if [ ! -d "build" ]; then
     print_status "Creating build directory..."
     mkdir build
@@ -45,7 +49,7 @@ print_status "Building the project..."
 
 if [ ! -f "Makefile" ] || [ "../CMakeLists.txt" -nt "Makefile" ]; then
     print_status "Running CMake configuration with MSYS Makefiles..."
-    cmake .. -G "MSYS Makefiles"
+    cmake .. -G "MSYS Makefiles" -DCMAKE_PREFIX_PATH="$CMAKE_PREFIX_PATH"
     if [ $? -ne 0 ]; then
         print_error "CMake configuration failed!"
         exit 1

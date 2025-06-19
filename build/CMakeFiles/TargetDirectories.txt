@@ -1,0 +1,5 @@
+C:/Users/ellen/Python_Playroom/build/CMakeFiles/python_quiz.dir
+C:/Users/ellen/Python_Playroom/build/CMakeFiles/edit_cache.dir
+C:/Users/ellen/Python_Playroom/build/CMakeFiles/rebuild_cache.dir
+C:/Users/ellen/Python_Playroom/build/CMakeFiles/python_quiz_autogen_timestamp_deps.dir
+C:/Users/ellen/Python_Playroom/build/CMakeFiles/python_quiz_autogen.dir

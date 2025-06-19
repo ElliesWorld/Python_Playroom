@@ -1,0 +1,4 @@
+# Hashes of file build rules.
+04ea12b49f60043d0555257222e04216 .qt/rcc/qrc_resources.cpp
+a373d517666ebeceaae4436f26147db3 CMakeFiles/python_quiz_autogen
+23559c673aa0948c2ee281198ebd9569 python_quiz_autogen/timestamp

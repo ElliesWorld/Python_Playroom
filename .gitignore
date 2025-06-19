@@ -1,0 +1,3 @@
+build# Build directories
+build/
+build-*/

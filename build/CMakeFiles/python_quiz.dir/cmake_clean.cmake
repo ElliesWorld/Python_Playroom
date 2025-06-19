@@ -1,0 +1,29 @@
+file(REMOVE_RECURSE
+  ".qt/rcc/qrc_resources.cpp"
+  "CMakeFiles/python_quiz_autogen.dir/AutogenUsed.txt"
+  "CMakeFiles/python_quiz_autogen.dir/ParseCache.txt"
+  "python_quiz_autogen"
+  "CMakeFiles/python_quiz.dir/build/.qt/rcc/qrc_resources.cpp.obj"
+  "CMakeFiles/python_quiz.dir/build/.qt/rcc/qrc_resources.cpp.obj.d"
+  "CMakeFiles/python_quiz.dir/python_quiz_autogen/mocs_compilation.cpp.obj"
+  "CMakeFiles/python_quiz.dir/python_quiz_autogen/mocs_compilation.cpp.obj.d"
+  "CMakeFiles/python_quiz.dir/src/main.cpp.obj"
+  "CMakeFiles/python_quiz.dir/src/main.cpp.obj.d"
+  "CMakeFiles/python_quiz.dir/src/main_window.cpp.obj"
+  "CMakeFiles/python_quiz.dir/src/main_window.cpp.obj.d"
+  "CMakeFiles/python_quiz.dir/src/questions.cpp.obj"
+  "CMakeFiles/python_quiz.dir/src/questions.cpp.obj.d"
+  "CMakeFiles/python_quiz.dir/src/quiz.cpp.obj"
+  "CMakeFiles/python_quiz.dir/src/quiz.cpp.obj.d"
+  "libpython_quiz.dll.a"
+  "python_quiz.exe"
+  "python_quiz.exe.manifest"
+  "python_quiz.pdb"
+  "python_quiz_autogen/mocs_compilation.cpp"
+  "python_quiz_autogen/timestamp"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang CXX)
+  include(CMakeFiles/python_quiz.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

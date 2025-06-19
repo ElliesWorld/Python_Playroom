@@ -26,6 +26,7 @@ qt6_add_resources(python_quiz "resources"
     FILES
         resources/config.json
         resources/styles.qss
+        resources/questions/level0_terminology.json
         resources/questions/level1_basics.json
         resources/questions/level2_variables.json
         resources/questions/level3_conditionals.json

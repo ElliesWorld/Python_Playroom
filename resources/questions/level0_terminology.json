@@ -1,0 +1,51 @@
+{
+    "level_info": {
+        "id": 0,
+        "name": "Programming Terminology",
+        "description": "Learn essential programming terms and concepts",
+        "time_per_question": 30,
+        "total_questions": 10,
+        "difficulty": "Beginner"
+    },
+    "questions": [
+        {
+            "id": 1,
+            "question_text": "What does IDE stand for?",
+            "options": [
+                "Internet Development Environment",
+                "Integrated Development Environment",
+                "Interactive Design Editor",
+                "Internal Data Engine"
+            ],
+            "correct_answer": 1,
+            "explanation": "IDE stands for Integrated Development Environment - a software application that provides comprehensive facilities for software development. Popular IDEs include Visual Studio Code, PyCharm, IntelliJ IDEA, and Eclipse.",
+            "topic": "Development Tools"
+        },
+        {
+            "id": 2,
+            "question_text": "What is Git primarily used for?",
+            "options": [
+                "Creating websites",
+                "Version control and tracking code changes",
+                "Running Python programs",
+                "Designing user interfaces"
+            ],
+            "correct_answer": 1,
+            "explanation": "Git is a distributed version control system used to track changes in source code during software development.",
+            "topic": "Version Control"
+        },
+        {
+            "id": 3,
+            "question_text": "What is syntax in programming?",
+            "options": [
+                "The meaning of code",
+                "The speed of execution",
+                "The rules that define valid code structure",
+                "The output of a program"
+            ],
+            "correct_answer": 2,
+            "explanation": "Syntax refers to the set of rules that defines the combinations of symbols that are considered valid in a programming language.",
+            "topic": "Programming Concepts"
+        }
+    ]
+}
