@@ -4,7 +4,7 @@
         "name": "Variables & Data Types",
         "description": "Learn about Python variables and basic data types",
         "time_per_question": 30,
-        "total_questions": 3,
+        "total_questions": 12,
         "difficulty": "Beginner"
     },
     "questions": [
@@ -46,6 +46,123 @@
             "correct_answer": 1,
             "explanation": "The type() function returns the data type of a variable or value in Python.",
             "topic": "Type Checking"
+        },
+        {
+            "id": 4,
+            "question_text": "What is the result of `str(123)`?",
+            "options": [
+                "123",
+                "\"123\"",
+                "Error",
+                "None"
+            ],
+            "correct_answer": 1,
+            "explanation": "The str() function converts a number to its string representation. So str(123) returns the string \"123\".",
+            "topic": "Type Conversion"
+        },
+        {
+            "id": 5,
+            "question_text": "Which of these is a mutable data type in Python?",
+            "options": [
+                "int",
+                "string",
+                "tuple",
+                "list"
+            ],
+            "correct_answer": 3,
+            "explanation": "Lists are mutable, meaning you can change their contents after creation. Integers, strings, and tuples are immutable.",
+            "topic": "Mutability"
+        },
+        {
+            "id": 6,
+            "question_text": "What does this code output: `x = 5; y = x; x = 10; print(y)`?",
+            "options": [
+                "10",
+                "5",
+                "Error",
+                "None"
+            ],
+            "correct_answer": 1,
+            "explanation": "When y = x is executed, y gets the value 5. Changing x to 10 afterwards doesn't affect y, so y remains 5.",
+            "topic": "Variable Assignment"
+        },
+        {
+            "id": 7,
+            "question_text": "How do you create a multi-line string in Python?",
+            "options": [
+                "Using \\n in single quotes",
+                "Using triple quotes \"\"\"text\"\"\"",
+                "Using double quotes with line breaks",
+                "All of the above"
+            ],
+            "correct_answer": 3,
+            "explanation": "Python supports multiple ways to create multi-line strings: triple quotes (most common), \\n escape characters, and actual line breaks in quotes.",
+            "topic": "Strings"
+        },
+        {
+            "id": 8,
+            "question_text": "What is the result of `int(\"42\")`?",
+            "options": [
+                "\"42\"",
+                "42",
+                "Error",
+                "42.0"
+            ],
+            "correct_answer": 1,
+            "explanation": "The int() function converts a string containing digits to an integer. So int(\"42\") returns the integer 42.",
+            "topic": "Type Conversion"
+        },
+        {
+            "id": 9,
+            "question_text": "Which of these creates a Boolean variable with value True?",
+            "options": [
+                "is_true = True",
+                "is_true = \"True\"",
+                "is_true = 1",
+                "Both A and C"
+            ],
+            "correct_answer": 0,
+            "explanation": "Only 'is_true = True' creates a Boolean variable. 'is_true = \"True\"' creates a string, and 'is_true = 1' creates an integer (though 1 is truthy).",
+            "topic": "Boolean Values"
+        },
+        {
+            "id": 10,
+            "question_text": "What happens when you do `x = [1, 2, 3]; y = x; y.append(4); print(x)`?",
+            "options": [
+                "[1, 2, 3]",
+                "[1, 2, 3, 4]",
+                "Error",
+                "None"
+            ],
+            "correct_answer": 1,
+            "explanation": "When y = x, both variables point to the same list object. Modifying the list through y also affects x, so x becomes [1, 2, 3, 4].",
+            "topic": "Reference vs Copy"
+        },
+        {
+            "id": 11,
+            "question_text": "What is the difference between '5' and 5 in Python?",
+            "options": [
+                "No difference",
+                "'5' is a string, 5 is an integer",
+                "'5' is a character, 5 is a number",
+                "They have different memory usage only"
+            ],
+            "correct_answer": 1,
+            "explanation": "'5' (with quotes) is a string data type, while 5 (without quotes) is an integer data type. They behave differently in operations.",
+            "topic": "Data Types"
+        },
+        {
+            "id": 12,
+            "question_text": "How do you create an empty list in Python?",
+            "options": [
+                "my_list = []",
+                "my_list = list()",
+                "my_list = empty()",
+                "Both A and B"
+            ],
+            "correct_answer": 3,
+            "explanation": "Both my_list = [] and my_list = list() create an empty list. The [] syntax is more common and concise.",
+            "topic": "List Creation"
         }
     ]
 }

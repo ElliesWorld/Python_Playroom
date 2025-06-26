@@ -52,7 +52,7 @@ void MainWindow::setup_welcome_screen()
     QString instructions =
         "Hi there! Are you ready to become a software developer?\n\n"
         "Click to begin your journey! You will have 20-60 seconds to answer each question "
-        "and each level consists of 3 questions.\n\n"
+        "and each level contains multiple questions to test your knowledge.\n\n"
         "For each question there will be information in the 'Learn More' button, "
         "but if you click that you will lose the point for that question!\n\n"
         "Each question earns you 1 point!\n\n"

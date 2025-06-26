@@ -1,0 +1,168 @@
+{
+    "level_info": {
+        "id": 4,
+        "name": "Loops",
+        "description": "Master for loops, while loops, and loop control",
+        "time_per_question": 40,
+        "total_questions": 12,
+        "difficulty": "Intermediate"
+    },
+    "questions": [
+        {
+            "id": 1,
+            "question_text": "What is the correct syntax for a for loop in Python?",
+            "options": [
+                "for i in range(5)",
+                "for i in range(5):",
+                "for (i in range(5)):",
+                "for i = 0 to 5:"
+            ],
+            "correct_answer": 1,
+            "explanation": "Python for loops require a colon (:) at the end. The syntax is 'for variable in iterable:' followed by an indented code block.",
+            "topic": "For Loop Syntax"
+        },
+        {
+            "id": 2,
+            "question_text": "What does `range(5)` generate?",
+            "options": [
+                "Numbers 1, 2, 3, 4, 5",
+                "Numbers 0, 1, 2, 3, 4",
+                "Numbers 0, 1, 2, 3, 4, 5",
+                "Error"
+            ],
+            "correct_answer": 1,
+            "explanation": "The range(5) function generates numbers from 0 up to (but not including) 5, so it produces 0, 1, 2, 3, 4.",
+            "topic": "Range Function"
+        },
+        {
+            "id": 3,
+            "question_text": "Which keyword is used to exit a loop early?",
+            "options": [
+                "exit",
+                "break",
+                "stop",
+                "end"
+            ],
+            "correct_answer": 1,
+            "explanation": "The 'break' statement is used to exit a loop immediately, regardless of the loop condition.",
+            "topic": "Loop Control"
+        },
+        {
+            "id": 4,
+            "question_text": "What does the `continue` statement do in a loop?",
+            "options": [
+                "Exits the loop completely",
+                "Skips the rest of the current iteration",
+                "Restarts the loop from the beginning",
+                "Pauses the loop"
+            ],
+            "correct_answer": 1,
+            "explanation": "The 'continue' statement skips the remaining code in the current iteration and moves to the next iteration of the loop.",
+            "topic": "Loop Control"
+        },
+        {
+            "id": 5,
+            "question_text": "What is the output of: `for i in range(3): print(i)`?",
+            "options": [
+                "1 2 3",
+                "0 1 2",
+                "0 1 2 3",
+                "1 2"
+            ],
+            "correct_answer": 1,
+            "explanation": "range(3) generates 0, 1, 2, so the loop prints each of these values: 0, 1, 2.",
+            "topic": "For Loop Output"
+        },
+        {
+            "id": 6,
+            "question_text": "How do you create an infinite while loop?",
+            "options": [
+                "while True:",
+                "while 1:",
+                "while infinite:",
+                "Both A and B"
+            ],
+            "correct_answer": 3,
+            "explanation": "Both 'while True:' and 'while 1:' create infinite loops because True and 1 are both truthy values that never change.",
+            "topic": "While Loops"
+        },
+        {
+            "id": 7,
+            "question_text": "What does `range(2, 8, 2)` generate?",
+            "options": [
+                "2, 4, 6",
+                "2, 4, 6, 8",
+                "2, 3, 4, 5, 6, 7",
+                "0, 2, 4, 6"
+            ],
+            "correct_answer": 0,
+            "explanation": "range(start, stop, step) generates numbers from 2 up to (but not including) 8, with a step of 2: 2, 4, 6.",
+            "topic": "Range Function"
+        },
+        {
+            "id": 8,
+            "question_text": "Which loop is best for iterating over a list?",
+            "options": [
+                "while loop",
+                "for loop",
+                "do-while loop",
+                "repeat loop"
+            ],
+            "correct_answer": 1,
+            "explanation": "For loops are designed for iterating over sequences like lists, strings, and tuples. They're more readable and less error-prone than while loops for this purpose.",
+            "topic": "Loop Types"
+        },
+        {
+            "id": 9,
+            "question_text": "What happens if you don't update the condition variable in a while loop?",
+            "options": [
+                "The loop runs once",
+                "Syntax error",
+                "Infinite loop",
+                "Runtime error"
+            ],
+            "correct_answer": 2,
+            "explanation": "If the condition never changes, the while loop will continue forever, creating an infinite loop that may crash your program or consume all system resources.",
+            "topic": "While Loop Pitfalls"
+        },
+        {
+            "id": 10,
+            "question_text": "How do you iterate over both index and value in a list?",
+            "options": [
+                "for i, v in enumerate(my_list):",
+                "for i, v in index(my_list):",
+                "for i, v in range(my_list):",
+                "for i, v in my_list:"
+            ],
+            "correct_answer": 0,
+            "explanation": "The enumerate() function returns both the index and value of each item in a list, allowing you to access both in a for loop.",
+            "topic": "Enumerate Function"
+        },
+        {
+            "id": 11,
+            "question_text": "What is the output of: `for i in range(5): if i == 3: break; print(i)`?",
+            "options": [
+                "0 1 2",
+                "0 1 2 3",
+                "0 1 2 3 4",
+                "1 2 3"
+            ],
+            "correct_answer": 0,
+            "explanation": "The loop prints 0, 1, 2, then when i equals 3, the break statement exits the loop before printing 3.",
+            "topic": "Break Statement"
+        },
+        {
+            "id": 12,
+            "question_text": "Which statement correctly iterates through a string?",
+            "options": [
+                "for char in \"hello\":",
+                "for i in len(\"hello\"):",
+                "for char in string(\"hello\"):",
+                "for i in \"hello\".length():"
+            ],
+            "correct_answer": 0,
+            "explanation": "Strings are iterable in Python, so you can directly iterate through each character using 'for char in string'.",
+            "topic": "String Iteration"
+        }
+    ]
+}

@@ -4,7 +4,7 @@
         "name": "Conditionals & Logic",
         "description": "Master if statements and logical operations",
         "time_per_question": 40,
-        "total_questions": 3,
+        "total_questions": 12,
         "difficulty": "Intermediate"
     },
     "questions": [
@@ -46,6 +46,123 @@
             "correct_answer": 0,
             "explanation": "'elif' is short for 'else if' and is used to check multiple conditions in sequence.",
             "topic": "Conditional Logic"
+        },
+        {
+            "id": 4,
+            "question_text": "What is the result of `bool([]) and bool(\"\")`?",
+            "options": [
+                "True",
+                "False",
+                "Error",
+                "None"
+            ],
+            "correct_answer": 1,
+            "explanation": "Both empty list [] and empty string \"\" are falsy values in Python, so bool([]) is False and bool(\"\") is False. False and False equals False.",
+            "topic": "Boolean Logic"
+        },
+        {
+            "id": 5,
+            "question_text": "Which logical operator returns True if at least one condition is True?",
+            "options": [
+                "and",
+                "or",
+                "not",
+                "xor"
+            ],
+            "correct_answer": 1,
+            "explanation": "The 'or' operator returns True if at least one of the conditions is True. The 'and' operator requires all conditions to be True.",
+            "topic": "Logical Operators"
+        },
+        {
+            "id": 6,
+            "question_text": "What does this code output: `if 5 > 3 and 2 < 1: print(\"Yes\") else: print(\"No\")`?",
+            "options": [
+                "Yes",
+                "No",
+                "Error",
+                "Nothing"
+            ],
+            "correct_answer": 1,
+            "explanation": "5 > 3 is True, but 2 < 1 is False. Since the 'and' operator requires both conditions to be True, the overall condition is False, so 'No' is printed.",
+            "topic": "Logical Operators"
+        },
+        {
+            "id": 7,
+            "question_text": "What is the correct way to check if a variable x is between 1 and 10 (inclusive)?",
+            "options": [
+                "if 1 <= x <= 10:",
+                "if x >= 1 and x <= 10:",
+                "if (x >= 1) and (x <= 10):",
+                "All of the above"
+            ],
+            "correct_answer": 3,
+            "explanation": "Python supports chained comparisons (1 <= x <= 10), which is equivalent to using 'and' operators. All three options are valid and produce the same result.",
+            "topic": "Comparison Operators"
+        },
+        {
+            "id": 8,
+            "question_text": "What does `not True` evaluate to?",
+            "options": [
+                "True",
+                "False",
+                "None",
+                "Error"
+            ],
+            "correct_answer": 1,
+            "explanation": "The 'not' operator flips the boolean value. Since True is the opposite of False, 'not True' evaluates to False.",
+            "topic": "Logical Operators"
+        },
+        {
+            "id": 9,
+            "question_text": "What happens with this code: `if x = 5: print(\"Hello\")`?",
+            "options": [
+                "Prints \"Hello\"",
+                "Prints nothing",
+                "Syntax error",
+                "Runtime error"
+            ],
+            "correct_answer": 2,
+            "explanation": "This code has a syntax error because it uses assignment (=) instead of comparison (==) in the if statement. Python will not run this code.",
+            "topic": "Common Errors"
+        },
+        {
+            "id": 10,
+            "question_text": "How do you check if a number is even using the modulo operator?",
+            "options": [
+                "if num % 2 == 0:",
+                "if num / 2 == 0:",
+                "if num % 2 == 1:",
+                "if num // 2 == 0:"
+            ],
+            "correct_answer": 0,
+            "explanation": "A number is even if it's divisible by 2 with no remainder. The modulo operator (%) returns the remainder, so num % 2 == 0 checks if the remainder is zero.",
+            "topic": "Modulo Operator"
+        },
+        {
+            "id": 11,
+            "question_text": "What is the result of `True or False and False`?",
+            "options": [
+                "True",
+                "False",
+                "Error",
+                "None"
+            ],
+            "correct_answer": 0,
+            "explanation": "Due to operator precedence, 'and' is evaluated before 'or'. So this becomes 'True or (False and False)', which is 'True or False', which equals True.",
+            "topic": "Operator Precedence"
+        },
+        {
+            "id": 12,
+            "question_text": "Which comparison operator checks if two variables reference the same object?",
+            "options": [
+                "==",
+                "!=",
+                "is",
+                "in"
+            ],
+            "correct_answer": 2,
+            "explanation": "The 'is' operator checks if two variables reference the same object in memory, while '==' checks if the values are equal. They can give different results.",
+            "topic": "Identity vs Equality"
         }
     ]
 }

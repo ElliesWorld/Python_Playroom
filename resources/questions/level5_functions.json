@@ -1,0 +1,168 @@
+{
+    "level_info": {
+        "id": 5,
+        "name": "Functions",
+        "description": "Learn to create and use functions effectively",
+        "time_per_question": 45,
+        "total_questions": 12,
+        "difficulty": "Intermediate"
+    },
+    "questions": [
+        {
+            "id": 1,
+            "question_text": "What is the correct syntax to define a function in Python?",
+            "options": [
+                "function myFunc():",
+                "def myFunc():",
+                "define myFunc():",
+                "func myFunc():"
+            ],
+            "correct_answer": 1,
+            "explanation": "Python uses the 'def' keyword followed by the function name, parentheses for parameters, and a colon to define functions.",
+            "topic": "Function Definition"
+        },
+        {
+            "id": 2,
+            "question_text": "How do you call a function named `greet` with no parameters?",
+            "options": [
+                "greet",
+                "greet()",
+                "call greet()",
+                "run greet"
+            ],
+            "correct_answer": 1,
+            "explanation": "To call a function in Python, you use the function name followed by parentheses, even if there are no parameters.",
+            "topic": "Function Calls"
+        },
+        {
+            "id": 3,
+            "question_text": "What keyword is used to return a value from a function?",
+            "options": [
+                "return",
+                "give",
+                "output",
+                "result"
+            ],
+            "correct_answer": 0,
+            "explanation": "The 'return' statement is used to send a value back from a function to the code that called it.",
+            "topic": "Return Statement"
+        },
+        {
+            "id": 4,
+            "question_text": "What happens if a function doesn't have a return statement?",
+            "options": [
+                "Error occurs",
+                "Returns 0",
+                "Returns None",
+                "Returns empty string"
+            ],
+            "correct_answer": 2,
+            "explanation": "If a function doesn't explicitly return a value, Python automatically returns None.",
+            "topic": "Return Statement"
+        },
+        {
+            "id": 5,
+            "question_text": "How do you define a function with parameters?",
+            "options": [
+                "def func(x, y):",
+                "def func[x, y]:",
+                "def func{x, y}:",
+                "def func<x, y>:"
+            ],
+            "correct_answer": 0,
+            "explanation": "Function parameters are defined inside parentheses after the function name, separated by commas.",
+            "topic": "Function Parameters"
+        },
+        {
+            "id": 6,
+            "question_text": "What is a default parameter in Python?",
+            "options": [
+                "A parameter that must be provided",
+                "A parameter with a pre-assigned value",
+                "The first parameter in a function",
+                "A parameter that returns a default value"
+            ],
+            "correct_answer": 1,
+            "explanation": "A default parameter has a pre-assigned value that will be used if no argument is provided when calling the function.",
+            "topic": "Default Parameters"
+        },
+        {
+            "id": 7,
+            "question_text": "What does this function return: `def add(a, b): return a + b`?",
+            "options": [
+                "Nothing",
+                "The sum of a and b",
+                "The values a and b",
+                "Error"
+            ],
+            "correct_answer": 1,
+            "explanation": "This function takes two parameters and returns their sum using the return statement.",
+            "topic": "Function Logic"
+        },
+        {
+            "id": 8,
+            "question_text": "How do you define a function with a default parameter?",
+            "options": [
+                "def greet(name=\"World\"):",
+                "def greet(name:=\"World\"):",
+                "def greet(name default \"World\"):",
+                "def greet(name || \"World\"):"
+            ],
+            "correct_answer": 0,
+            "explanation": "Default parameters are defined by assigning a value using the equals sign (=) in the parameter list.",
+            "topic": "Default Parameters"
+        },
+        {
+            "id": 9,
+            "question_text": "What is the scope of a variable defined inside a function?",
+            "options": [
+                "Global scope",
+                "Local scope",
+                "Module scope",
+                "Class scope"
+            ],
+            "correct_answer": 1,
+            "explanation": "Variables defined inside a function have local scope, meaning they can only be accessed within that function.",
+            "topic": "Variable Scope"
+        },
+        {
+            "id": 10,
+            "question_text": "What does `*args` allow you to do in a function?",
+            "options": [
+                "Accept any number of positional arguments",
+                "Accept any number of keyword arguments",
+                "Create a list automatically",
+                "Pass arguments by reference"
+            ],
+            "correct_answer": 0,
+            "explanation": "*args allows a function to accept any number of positional arguments, which are collected into a tuple.",
+            "topic": "Variable Arguments"
+        },
+        {
+            "id": 11,
+            "question_text": "How do you call a function with keyword arguments?",
+            "options": [
+                "func(x=5, y=10)",
+                "func(x:5, y:10)",
+                "func(x->5, y->10)",
+                "func[x=5, y=10]"
+            ],
+            "correct_answer": 0,
+            "explanation": "Keyword arguments are passed using the parameter name followed by an equals sign and the value.",
+            "topic": "Keyword Arguments"
+        },
+        {
+            "id": 12,
+            "question_text": "What is a lambda function?",
+            "options": [
+                "A function with no name",
+                "A small anonymous function",
+                "A function that returns lambda",
+                "Both A and B"
+            ],
+            "correct_answer": 3,
+            "explanation": "A lambda function is both anonymous (has no name) and is typically small, used for simple operations that can be defined in a single line.",
+            "topic": "Lambda Functions"
+        }
+    ]
+}

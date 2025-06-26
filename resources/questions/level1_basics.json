@@ -4,7 +4,7 @@
         "name": "Python Basics",
         "description": "Introduction to Python syntax and concepts",
         "time_per_question": 20,
-        "total_questions": 3,
+        "total_questions": 12,
         "difficulty": "Beginner"
     },
     "questions": [
@@ -46,6 +46,123 @@
             "correct_answer": 2,
             "explanation": "Python files use the .py extension. This tells the system that the file contains Python code.",
             "topic": "File Extensions"
+        },
+        {
+            "id": 4,
+            "question_text": "How do you print output to the console in Python?",
+            "options": [
+                "echo(\"Hello World\")",
+                "print(\"Hello World\")",
+                "console.log(\"Hello World\")",
+                "output(\"Hello World\")"
+            ],
+            "correct_answer": 1,
+            "explanation": "The print() function is used to display output to the console in Python. It's one of the most commonly used built-in functions.",
+            "topic": "Built-in Functions"
+        },
+        {
+            "id": 5,
+            "question_text": "Which of these is NOT a valid Python variable name?",
+            "options": [
+                "my_variable",
+                "_private_var",
+                "2nd_variable",
+                "variable2"
+            ],
+            "correct_answer": 2,
+            "explanation": "Variable names in Python cannot start with a number. They must begin with a letter or underscore, followed by letters, numbers, or underscores.",
+            "topic": "Variable Naming"
+        },
+        {
+            "id": 6,
+            "question_text": "What happens when you run `print(type(42))`?",
+            "options": [
+                "<class 'int'>",
+                "<class 'number'>",
+                "<class 'integer'>",
+                "42"
+            ],
+            "correct_answer": 0,
+            "explanation": "The type() function returns the data type of an object. The number 42 is an integer, so Python returns <class 'int'>.",
+            "topic": "Data Types"
+        },
+        {
+            "id": 7,
+            "question_text": "Which symbol is used for exponentiation in Python?",
+            "options": [
+                "^",
+                "**",
+                "pow",
+                "exp"
+            ],
+            "correct_answer": 1,
+            "explanation": "Python uses ** for exponentiation. For example, 2**3 equals 8. The ^ symbol is used for bitwise XOR, not exponentiation.",
+            "topic": "Operators"
+        },
+        {
+            "id": 8,
+            "question_text": "What does the `len()` function do?",
+            "options": [
+                "Converts text to lowercase",
+                "Returns the length/size of an object",
+                "Creates a new list",
+                "Deletes an object"
+            ],
+            "correct_answer": 1,
+            "explanation": "The len() function returns the number of items in an object like a string, list, tuple, or dictionary.",
+            "topic": "Built-in Functions"
+        },
+        {
+            "id": 9,
+            "question_text": "Which of these creates a string in Python?",
+            "options": [
+                "'Hello World'",
+                "\"Hello World\"",
+                "\"\"\"Hello World\"\"\"",
+                "All of the above"
+            ],
+            "correct_answer": 3,
+            "explanation": "Python allows strings to be created using single quotes, double quotes, or triple quotes. All three methods are valid.",
+            "topic": "Strings"
+        },
+        {
+            "id": 10,
+            "question_text": "What is the result of `print(3 + 2 * 4)`?",
+            "options": [
+                "20",
+                "11",
+                "14",
+                "Error"
+            ],
+            "correct_answer": 1,
+            "explanation": "Following order of operations (PEMDAS), multiplication happens before addition: 2 * 4 = 8, then 3 + 8 = 11.",
+            "topic": "Operators"
+        },
+        {
+            "id": 11,
+            "question_text": "How do you get user input in Python?",
+            "options": [
+                "input()",
+                "get_input()",
+                "read()",
+                "scan()"
+            ],
+            "correct_answer": 0,
+            "explanation": "The input() function is used to get user input from the keyboard. It always returns a string, even if the user enters numbers.",
+            "topic": "Built-in Functions"
+        },
+        {
+            "id": 12,
+            "question_text": "What does `print(bool(0))` output?",
+            "options": [
+                "True",
+                "False",
+                "0",
+                "Error"
+            ],
+            "correct_answer": 1,
+            "explanation": "In Python, the number 0 is considered 'falsy', so bool(0) returns False. Non-zero numbers are 'truthy' and return True.",
+            "topic": "Boolean Values"
         }
     ]
 }

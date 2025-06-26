@@ -4,7 +4,7 @@
         "name": "Programming Terminology",
         "description": "Learn essential programming terms and concepts",
         "time_per_question": 30,
-        "total_questions": 10,
+        "total_questions": 12,
         "difficulty": "Beginner"
     },
     "questions": [
@@ -45,6 +45,84 @@
             ],
             "correct_answer": 2,
             "explanation": "Syntax refers to the set of rules that defines the combinations of symbols that are considered valid in a programming language.",
+            "topic": "Programming Concepts"
+        },
+        {
+            "id": 4,
+            "question_text": "What is debugging?",
+            "options": [
+                "Finding security vulnerabilities",
+                "The process of finding and fixing errors in code",
+                "Optimizing code performance",
+                "Writing documentation"
+            ],
+            "correct_answer": 1,
+            "explanation": "Debugging is the process of identifying, analyzing, and removing errors (bugs) from computer programs to ensure they work correctly.",
+            "topic": "Programming Concepts"
+        },
+        {
+            "id": 5,
+            "question_text": "What does API stand for?",
+            "options": [
+                "Advanced Programming Interface",
+                "Application Programming Interface",
+                "Automated Program Installer",
+                "Application Performance Index"
+            ],
+            "correct_answer": 1,
+            "explanation": "API stands for Application Programming Interface - a set of protocols and tools that allows different software applications to communicate with each other.",
+            "topic": "Programming Concepts"
+        },
+        {
+            "id": 6,
+            "question_text": "What is a compiler?",
+            "options": [
+                "A tool that finds bugs in code",
+                "A program that translates source code into machine code",
+                "A text editor for programming",
+                "A database management system"
+            ],
+            "correct_answer": 1,
+            "explanation": "A compiler is a program that translates source code written in a high-level programming language into machine code that can be executed by a computer's processor.",
+            "topic": "Development Tools"
+        },
+        {
+            "id": 7,
+            "question_text": "What does \"open source\" mean?",
+            "options": [
+                "Software that costs money",
+                "Software with source code freely available for modification",
+                "Software that runs on any operating system",
+                "Software that requires internet connection"
+            ],
+            "correct_answer": 1,
+            "explanation": "Open source refers to software whose source code is freely available for anyone to view, modify, and distribute, promoting collaboration and transparency in software development.",
+            "topic": "Software Development"
+        },
+        {
+            "id": 8,
+            "question_text": "What is a repository (repo)?",
+            "options": [
+                "A storage location for software packages and code",
+                "A type of programming language",
+                "A debugging tool",
+                "A user interface component"
+            ],
+            "correct_answer": 0,
+            "explanation": "A repository is a storage location where code, documentation, and other project files are kept and managed, often using version control systems like Git.",
+            "topic": "Version Control"
+        },
+        {
+            "id": 9,
+            "question_text": "What is refactoring?",
+            "options": [
+                "Adding new features to code",
+                "Restructuring existing code without changing its functionality",
+                "Removing all comments from code",
+                "Converting code to a different programming language"
+            ],
+            "correct_answer": 1,
+            "explanation": "Refactoring is the process of restructuring existing code to improve its readability, maintainability, or performance without changing its external behavior or functionality.",
             "topic": "Programming Concepts"
         }
     ]
