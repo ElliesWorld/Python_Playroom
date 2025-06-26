@@ -4,7 +4,7 @@ project(python_quiz)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(Qt6 REQUIRED COMPONENTS Core Widgets)
+find_package(Qt6 REQUIRED COMPONENTS Core Widgets Multimedia)
 
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
@@ -18,6 +18,8 @@ qt6_add_executable(python_quiz
     src/quiz.h
     src/questions.cpp
     src/questions.h
+    src/sound_manager.cpp
+    src/sound_manager.h
 )
 
 qt6_add_resources(python_quiz "resources"
@@ -32,6 +34,8 @@ qt6_add_resources(python_quiz "resources"
         resources/questions/level3_conditionals.json
         resources/questions/level4_loops.json
         resources/questions/level5_functions.json
+        resources/sounds/correct.wav
+        resources/sounds/wrong.wav
 )
 
-target_link_libraries(python_quiz PRIVATE Qt6::Core Qt6::Widgets)
+target_link_libraries(python_quiz PRIVATE Qt6::Core Qt6::Widgets Qt6::Multimedia)

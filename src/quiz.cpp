@@ -1,4 +1,6 @@
 #include "quiz.h"
+#include "sound_manager.h"
+
 #include <QDebug>
 
 Quiz::Quiz(Questions *questions, QWidget *parent)
@@ -7,6 +9,8 @@ Quiz::Quiz(Questions *questions, QWidget *parent)
 {
     countdown_timer = new QTimer(this);
     connect(countdown_timer, &QTimer::timeout, this, &Quiz::on_timer_tick);
+
+    sound_manager = new SoundManager(this);
 
     setup_ui();
 }
@@ -24,10 +28,15 @@ void Quiz::setup_ui()
     progress_label = new QLabel("Question 1 of 3");
     progress_label->setObjectName("progress_label");
 
+    mute_button = new QPushButton("🔊");
+    mute_button->setObjectName("mute_button");
+    connect(mute_button, &QPushButton::clicked, this, &Quiz::toggle_mute);
+
     timer_label = new QLabel("Time: 30s");
     timer_label->setObjectName("timer_label");
 
     top_layout->addWidget(progress_label);
+    top_layout->addWidget(mute_button);
     top_layout->addStretch();
     top_layout->addWidget(timer_label);
 
@@ -53,7 +62,6 @@ void Quiz::setup_ui()
     explanation_label->setObjectName("explanation_label");
     explanation_label->setWordWrap(true);
     explanation_label->setVisible(false);
-    explanation_label->setStyleSheet("background-color: #3a3a3a; padding: 15px; border-radius: 8px; color: #ffeb3b; border: 2px solid #ff9800;");
     main_layout->addWidget(explanation_label);
 
     QHBoxLayout *button_layout = new QHBoxLayout();
@@ -208,6 +216,8 @@ void Quiz::on_time_up()
 
     if (!question_answered)
     {
+        sound_manager->playWrongSound();
+
         for (auto *button : option_buttons)
         {
             button->setEnabled(false);
@@ -222,46 +232,6 @@ void Quiz::on_time_up()
         timer_label->style()->unpolish(timer_label);
         timer_label->style()->polish(timer_label);
     }
-}
-
-void Quiz::on_answer_selected()
-{
-    if (question_answered)
-    {
-        return;
-    }
-
-    for (int i = 0; i < option_buttons.size(); ++i)
-    {
-        if (option_buttons[i]->isChecked())
-        {
-            selected_answer = i;
-            break;
-        }
-    }
-
-    countdown_timer->stop();
-    question_answered = true;
-
-    Question current = question_manager->current_question();
-    if (selected_answer == current.correct_answer)
-    {
-        score++;
-        option_buttons[selected_answer]->setStyleSheet("QRadioButton { color: #4CAF50; font-weight: bold; }");
-    }
-    else
-    {
-        option_buttons[selected_answer]->setStyleSheet("QRadioButton { color: #f44336; font-weight: bold; }");
-        option_buttons[current.correct_answer]->setStyleSheet("QRadioButton { color: #4CAF50; font-weight: bold; }");
-    }
-
-    for (auto *button : option_buttons)
-    {
-        button->setEnabled(false);
-    }
-
-    learn_more_button->setEnabled(false);
-    enable_navigation();
 }
 
 void Quiz::on_learn_more()
@@ -321,7 +291,9 @@ void Quiz::on_next_question()
 {
     for (auto *button : option_buttons)
     {
-        button->setStyleSheet("");
+        button->setProperty("answerState", "");
+        button->style()->unpolish(button);
+        button->style()->polish(button);
     }
 
     if (question_manager->move_to_next())
@@ -333,4 +305,77 @@ void Quiz::on_next_question()
         countdown_timer->stop();
         emit quiz_completed(score);
     }
+}
+
+void Quiz::toggle_mute()
+{
+    bool muted = !sound_manager->isMuted();
+    sound_manager->setMuted(muted);
+    update_mute_button();
+}
+
+void Quiz::update_mute_button()
+{
+    if (sound_manager->isMuted())
+    {
+        mute_button->setText("🔇"); 
+    }
+    else
+    {
+        mute_button->setText("🔊"); 
+    }
+}
+
+void Quiz::on_answer_selected()
+{
+    if (question_answered)
+    {
+        return;
+    }
+
+    for (int i = 0; i < option_buttons.size(); ++i)
+    {
+        if (option_buttons[i]->isChecked())
+        {
+            selected_answer = i;
+            break;
+        }
+    }
+
+    countdown_timer->stop();
+    question_answered = true;
+
+    Question current = question_manager->current_question();
+    if (selected_answer == current.correct_answer)
+    {
+        score++;
+        sound_manager->playCorrectSound();
+
+        // Apply correct answer styling using property
+        option_buttons[selected_answer]->setProperty("answerState", "correct");
+        option_buttons[selected_answer]->style()->unpolish(option_buttons[selected_answer]);
+        option_buttons[selected_answer]->style()->polish(option_buttons[selected_answer]);
+    }
+    else
+    {
+        sound_manager->playWrongSound();
+
+        // Apply wrong answer styling to selected button
+        option_buttons[selected_answer]->setProperty("answerState", "wrong");
+        option_buttons[selected_answer]->style()->unpolish(option_buttons[selected_answer]);
+        option_buttons[selected_answer]->style()->polish(option_buttons[selected_answer]);
+
+        // Apply correct answer styling to the right answer
+        option_buttons[current.correct_answer]->setProperty("answerState", "correct");
+        option_buttons[current.correct_answer]->style()->unpolish(option_buttons[current.correct_answer]);
+        option_buttons[current.correct_answer]->style()->polish(option_buttons[current.correct_answer]);
+    }
+
+    for (auto *button : option_buttons)
+    {
+        button->setEnabled(false);
+    }
+
+    learn_more_button->setEnabled(false);
+    enable_navigation();
 }

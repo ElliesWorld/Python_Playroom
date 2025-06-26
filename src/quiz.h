@@ -10,8 +10,10 @@
 #include <QButtonGroup>
 #include <QTimer>
 #include <QVector>
-#include "questions.h"
 #include <QStyle>
+
+#include "questions.h"
+#include "sound_manager.h"
 
 class Quiz : public QWidget
 {
@@ -28,10 +30,12 @@ private slots:
     void on_learn_more();
     void on_timer_tick();
     void on_time_up();
+    void toggle_mute();
 
 private:
     Questions *question_manager;
     QTimer *countdown_timer;
+    SoundManager *sound_manager;
 
     QLabel *question_label;
     QVector<QRadioButton *> option_buttons;
@@ -39,6 +43,7 @@ private:
     QPushButton *next_button;
     QPushButton *learn_more_button;
     QPushButton *back_button;
+    QPushButton *mute_button;
     QLabel *timer_label;
     QLabel *progress_label;
     QLabel *explanation_label;
@@ -57,6 +62,7 @@ private:
     void hide_explanation();
     void enable_navigation();
     void disable_navigation();
+    void update_mute_button();
 
 signals:
     void quiz_completed(int final_score);

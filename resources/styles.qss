@@ -92,6 +92,16 @@ QScrollBar::handle:vertical:hover {
                                stop: 0 #ff5252, stop: 1 #feb347);
 }
 
+QLabel#explanation_label {
+    background-color: #3a3a3a;
+    padding: 15px;
+    border-radius: 8px;
+    color: #ffeb3b;
+    border: 2px solid #ff9800;
+    font-size: 14px;
+    font-weight: 500;
+}
+
 /* Quiz Screen */
 QWidget#quiz_screen {
     background: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1,
@@ -201,6 +211,20 @@ QRadioButton::indicator:checked {
     image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEzLjg1IDQuMTVMMy41IDE0LjVMMi4xNSAxMy4xNUw2IDkuM0wxMy44NSA0LjE1WiIgZmlsbD0id2hpdGUiLz4KPHN2Zz4K);
 }
 
+QRadioButton[answerState="correct"] {
+    color: #4CAF50 !important;
+    font-weight: bold !important;
+    background: rgba(76, 175, 80, 0.1) !important;
+    border: 2px solid #4CAF50 !important;
+}
+
+QRadioButton[answerState="wrong"] {
+    color: #f44336 !important;
+    font-weight: bold !important;
+    background: rgba(244, 67, 54, 0.1) !important;
+    border: 2px solid #f44336 !important;
+}
+
 /* Action Buttons - Colorful Bottom Buttons */
 QPushButton#back_button {
     background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
@@ -292,4 +316,23 @@ QPushButton#action_button:hover {
     background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
                                stop: 0 #5faef7, stop: 1 #0770c4);
     border: 2px solid rgba(255,255,255,0.5);
+}
+
+/* Mute Button */
+QPushButton#mute_button {
+    background: rgba(192, 192, 192, 0.3);
+    border: 2px solid rgba(192, 192, 192, 0.6);
+    border-radius: 25px;
+    padding: 5px;
+    font-size: 20px;
+    min-width: 50px;
+    max-width: 50px;
+    min-height: 50px;
+    max-height: 50px;
+    color: white;
+}
+
+QPushButton#mute_button:hover {
+    background: rgba(192, 192, 192, 0.5);
+    border: 2px solid rgba(192, 192, 192, 0.8);
 }
