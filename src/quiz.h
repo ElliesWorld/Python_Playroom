@@ -11,6 +11,7 @@
 #include <QTimer>
 #include <QVector>
 #include <QStyle>
+#include <QPropertyAnimation>
 
 #include "questions.h"
 #include "sound_manager.h"
@@ -47,6 +48,8 @@ private:
     QLabel *timer_label;
     QLabel *progress_label;
     QLabel *explanation_label;
+    QLabel *smiley_label;                 
+    QPropertyAnimation *smiley_animation;
 
     int time_remaining;
     int score;
@@ -63,6 +66,7 @@ private:
     void enable_navigation();
     void disable_navigation();
     void update_mute_button();
+    void show_celebration();
 
 signals:
     void quiz_completed(int final_score);

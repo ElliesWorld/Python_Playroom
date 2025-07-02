@@ -47,6 +47,18 @@ void Quiz::setup_ui()
     question_label->setWordWrap(true);
     main_layout->addWidget(question_label);
 
+    smiley_label = new QLabel("🎉");
+    smiley_label->setObjectName("smiley_label");
+    smiley_label->setAlignment(Qt::AlignCenter);
+    smiley_label->setVisible(false);
+    main_layout->addWidget(smiley_label);
+
+    // Create animation
+    smiley_animation = new QPropertyAnimation(smiley_label, "geometry");
+    smiley_animation->setDuration(1500); 
+    connect(smiley_animation, &QPropertyAnimation::finished, [this]()
+            { smiley_label->setVisible(false); });
+
     button_group = new QButtonGroup(this);
     for (int i = 0; i < 4; ++i)
     {
@@ -326,6 +338,21 @@ void Quiz::update_mute_button()
     }
 }
 
+void Quiz::show_celebration()
+{
+    smiley_label->setVisible(true);
+    smiley_label->setText("🎉 Great job! 🎉");
+
+    // Bounce animation
+    QRect start = smiley_label->geometry();
+    QRect middle = start.adjusted(0, -20, 0, -20); // Move up 20px
+
+    smiley_animation->setKeyValueAt(0, start);
+    smiley_animation->setKeyValueAt(0.5, middle);
+    smiley_animation->setKeyValueAt(1, start);
+    smiley_animation->start();
+}
+
 void Quiz::on_answer_selected()
 {
     if (question_answered)
@@ -350,6 +377,12 @@ void Quiz::on_answer_selected()
     {
         score++;
         sound_manager->playCorrectSound();
+
+        // Add celebration for fast answers
+        if (time_remaining > 15)
+        { // Fast answer (within 5 seconds)
+            show_celebration();
+        }
 
         // Apply correct answer styling using property
         option_buttons[selected_answer]->setProperty("answerState", "correct");
