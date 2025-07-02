@@ -325,10 +325,10 @@ QPushButton#mute_button {
     border-radius: 25px;
     padding: 5px;
     font-size: 20px;
-    min-width: 50px;
-    max-width: 50px;
-    min-height: 50px;
-    max-height: 50px;
+    min-width: 20px;
+    max-width: 20px;
+    min-height: 20px;
+    max-height: 20px;
     color: white;
 }
 

@@ -35,8 +35,8 @@ void Quiz::setup_ui()
     timer_label = new QLabel("Time: 30s");
     timer_label->setObjectName("timer_label");
 
-    top_layout->addWidget(progress_label);
     top_layout->addWidget(mute_button);
+    top_layout->addWidget(progress_label);
     top_layout->addStretch();
     top_layout->addWidget(timer_label);
 
