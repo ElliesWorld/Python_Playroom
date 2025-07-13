@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.16)
-project(python_quiz)
+project(programming_quiz)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -10,7 +10,7 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
 
-qt6_add_executable(python_quiz
+qt6_add_executable(programming_quiz
     src/main.cpp
     src/main_window.cpp
     src/main_window.h
@@ -20,22 +20,37 @@ qt6_add_executable(python_quiz
     src/questions.h
     src/sound_manager.cpp
     src/sound_manager.h
+    src/settings_manager.cpp
+    src/settings_manager.h
+    src/settings_toolbar.cpp
+    src/settings_toolbar.h
 )
 
-qt6_add_resources(python_quiz "resources"
+qt6_add_resources(programming_quiz "resources"
     PREFIX "/"
     BASE "resources"
     FILES
         resources/config.json
+        resources/config_cpp.json
+        resources/config_c.json
+
         resources/styles.qss
+
         resources/questions/level0_terminology.json
         resources/questions/level1_basics.json
         resources/questions/level2_variables.json
         resources/questions/level3_conditionals.json
         resources/questions/level4_loops.json
         resources/questions/level5_functions.json
+        
+        resources/questions_cpp/level0_cpp_basics.json
+        resources/questions_cpp/level1_cpp_variables.json
+        
+        resources/questions_c/level0_c_basics.json
+        resources/questions_c/level1_c_variables.json
+        
         resources/sounds/correct.wav
         resources/sounds/wrong.wav
 )
 
-target_link_libraries(python_quiz PRIVATE Qt6::Core Qt6::Widgets Qt6::Multimedia)
+target_link_libraries(programming_quiz PRIVATE Qt6::Core Qt6::Widgets Qt6::Multimedia)

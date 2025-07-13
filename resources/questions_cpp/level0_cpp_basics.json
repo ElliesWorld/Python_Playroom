@@ -1,0 +1,51 @@
+{
+    "level_info": {
+        "id": 0,
+        "name": "C++ Basics",
+        "description": "Introduction to C++ programming concepts",
+        "time_per_question": 30,
+        "total_questions": 3,
+        "difficulty": "Beginner"
+    },
+    "questions": [
+        {
+            "id": 1,
+            "question_text": "What is the correct file extension for C++ source files?",
+            "options": [
+                ".c",
+                ".cpp",
+                ".h",
+                ".py"
+            ],
+            "correct_answer": 1,
+            "explanation": "C++ source files typically use the .cpp extension (or sometimes .cc, .cxx). Header files use .h or .hpp.",
+            "topic": "File Extensions"
+        },
+        {
+            "id": 2,
+            "question_text": "Which header file is required to use cout in C++?",
+            "options": [
+                "#include <stdio.h>",
+                "#include <iostream>",
+                "#include <string>",
+                "#include <vector>"
+            ],
+            "correct_answer": 1,
+            "explanation": "The <iostream> header provides input/output stream functionality, including cout for output and cin for input.",
+            "topic": "Headers"
+        },
+        {
+            "id": 3,
+            "question_text": "What does the 'using namespace std;' directive do?",
+            "options": [
+                "It imports all Python libraries",
+                "It allows using standard library functions without the std:: prefix",
+                "It creates a new namespace",
+                "It ends the program"
+            ],
+            "correct_answer": 1,
+            "explanation": "The 'using namespace std;' directive allows you to use standard library elements like cout, cin, string, etc. without prefixing them with 'std::'.",
+            "topic": "Namespaces"
+        }
+    ]
+}

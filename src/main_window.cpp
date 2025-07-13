@@ -5,10 +5,17 @@
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), current_level_id(0), current_score(0)
 {
-    question_manager = new Questions(this);
+    settings_manager = new SettingsManager(this);
+
+    question_manager = new Questions(settings_manager, this);
+
     setup_ui();
     load_stylesheet();
+    update_window_title();
     show_welcome();
+
+    connect(settings_manager, &SettingsManager::modeChanged,
+            this, &MainWindow::on_quiz_mode_changed);
 }
 
 MainWindow::~MainWindow()
@@ -17,6 +24,9 @@ MainWindow::~MainWindow()
 
 void MainWindow::setup_ui()
 {
+    settings_toolbar = new SettingsToolbar(settings_manager, this);
+    addToolBar(Qt::TopToolBarArea, settings_toolbar);
+
     central_stack = new QStackedWidget(this);
     setCentralWidget(central_stack);
 
@@ -31,8 +41,7 @@ void MainWindow::setup_ui()
     central_stack->addWidget(quiz_screen);
     central_stack->addWidget(results_screen);
 
-    setWindowTitle("Python Learning Quiz");
-    resize(800, 600);
+    resize(850, 650); 
 }
 
 void MainWindow::setup_welcome_screen()
@@ -41,24 +50,15 @@ void MainWindow::setup_welcome_screen()
     welcome_screen->setObjectName("welcome_screen");
 
     QVBoxLayout *main_layout = new QVBoxLayout(welcome_screen);
-    main_layout->setSpacing(20);
-    main_layout->setContentsMargins(40, 40, 40, 40);
+    main_layout->setSpacing(30);                     /* More spacing between elements */
+    main_layout->setContentsMargins(30, 30, 30, 40); /* Adjust margins */
 
-    title_label = new QLabel("🐍 Python Learning Quiz");
+    title_label = new QLabel();
     title_label->setObjectName("title_label");
     title_label->setAlignment(Qt::AlignCenter);
     main_layout->addWidget(title_label);
 
-    QString instructions =
-        "Hi there! Are you ready to become a software developer?\n\n"
-        "Click to begin your journey! You will have 20-60 seconds to answer each question "
-        "and each level contains multiple questions to test your knowledge.\n\n"
-        "For each question there will be information in the 'Learn More' button, "
-        "but if you click that you will lose the point for that question!\n\n"
-        "Each question earns you 1 point!\n\n"
-        "Select a level to start:";
-
-    instructions_label = new QLabel(instructions);
+    instructions_label = new QLabel();
     instructions_label->setObjectName("instructions_label");
     instructions_label->setAlignment(Qt::AlignCenter);
     instructions_label->setWordWrap(true);
@@ -71,12 +71,12 @@ void MainWindow::setup_welcome_screen()
     QScrollArea *scroll_area = new QScrollArea();
     scroll_area->setWidget(levels_widget);
     scroll_area->setWidgetResizable(true);
-    scroll_area->setMaximumHeight(300);
+    scroll_area->setMaximumHeight(260);
     main_layout->addWidget(scroll_area);
 
     main_layout->addStretch();
 
-    update_level_buttons();
+    update_welcome_screen_content();
 }
 
 void MainWindow::setup_results_screen()
@@ -174,9 +174,53 @@ void MainWindow::load_stylesheet()
     }
 }
 
+void MainWindow::update_window_title()
+{
+    QString title = settings_manager->modeToDisplayName(settings_manager->currentMode());
+    setWindowTitle(title);
+}
+
+void MainWindow::update_welcome_screen_content()
+{
+    QuizMode currentMode = settings_manager->currentMode();
+    QString icon = settings_manager->modeToIcon(currentMode);
+    QString displayName = settings_manager->modeToDisplayName(currentMode);
+
+    title_label->setText(QString("%1 %2").arg(icon).arg(displayName));
+
+    QString languageName;
+    switch (currentMode)
+    {
+    case QuizMode::Python:
+        languageName = "Python";
+        break;
+    case QuizMode::Cpp:
+        languageName = "C++";
+        break;
+    case QuizMode::C:
+        languageName = "C";
+        break;
+    }
+
+    QString instructions = QString(
+                               "Hi there! Are you ready to become a %1 developer?\n\n"
+                               "Click to begin your journey! You will have 20-60 seconds to answer each question "
+                               "and each level contains multiple questions to test your knowledge.\n\n"
+                               "For each question there will be information in the 'Learn More' button, "
+                               "but if you click that you will lose the point for that question!\n\n"
+                               "Each question earns you 1 point!\n\n"
+                               "Select a level to start:")
+                               .arg(languageName);
+
+    instructions_label->setText(instructions);
+
+    welcome_screen->update();
+}
+
 void MainWindow::show_welcome()
 {
     update_level_buttons();
+    update_welcome_screen_content();
     central_stack->setCurrentWidget(welcome_screen);
 }
 
@@ -196,15 +240,30 @@ void MainWindow::show_results(int score)
 
     double percentage = (double)score / total_questions * 100;
     QString performance_text;
+    QString languageName;
+
+    QuizMode currentMode = settings_manager->currentMode();
+    switch (currentMode)
+    {
+    case QuizMode::Python:
+        languageName = "Python";
+        break;
+    case QuizMode::Cpp:
+        languageName = "C++";
+        break;
+    case QuizMode::C:
+        languageName = "C";
+        break;
+    }
 
     if (percentage >= 100)
     {
-        performance_text = "🏆 Perfect! You're a Python master!";
+        performance_text = QString("🏆 Perfect! You're a %1 master!").arg(languageName);
         question_manager->unlock_level(current_level_id + 1);
     }
     else if (percentage >= 66)
     {
-        performance_text = "🎯 Great job! You're getting the hang of Python!";
+        performance_text = QString("🎯 Great job! You're getting the hang of %1!").arg(languageName);
         question_manager->unlock_level(current_level_id + 1);
     }
     else if (percentage >= 33)
@@ -213,7 +272,7 @@ void MainWindow::show_results(int score)
     }
     else
     {
-        performance_text = "💪 Keep trying! Python takes practice to master!";
+        performance_text = QString("💪 Keep trying! %1 takes practice to master!").arg(languageName);
     }
 
     performance_label->setText(performance_text);
@@ -229,4 +288,20 @@ void MainWindow::on_level_button_clicked()
         int level_id = button->property("level_id").toInt();
         start_quiz(level_id);
     }
+}
+
+void MainWindow::on_quiz_mode_changed(QuizMode newMode)
+{
+    qDebug() << "Mode changed to:" << static_cast<int>(newMode);
+
+    update_window_title();
+
+    question_manager->load_configuration();
+
+    update_welcome_screen_content();
+    update_level_buttons();
+
+    central_stack->setCurrentWidget(welcome_screen);
+
+    quiz_screen->onModeChanged();
 }

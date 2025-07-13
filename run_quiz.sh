@@ -65,12 +65,12 @@ fi
 
 print_success "Build completed successfully!"
 
-if [ -f "python_quiz.exe" ]; then
-    print_status "Launching Python Quiz..."
-    ./python_quiz.exe
-elif [ -f "python_quiz" ]; then
-    print_status "Launching Python Quiz..."
-    ./python_quiz
+if [ -f "programming_quiz.exe" ]; then
+    print_status "Launching Programming Quiz..."
+    ./programming_quiz.exe
+elif [ -f "programming_quiz" ]; then
+    print_status "Launching Programming Quiz..."
+    ./programming_quiz
 else
     print_error "Executable not found! Build may have failed."
     exit 1

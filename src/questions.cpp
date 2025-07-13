@@ -1,18 +1,34 @@
 #include "questions.h"
 #include <QDebug>
 
-Questions::Questions(QObject *parent)
-    : QObject(parent), current_index_value(0)
+Questions::Questions(SettingsManager *settingsManager, QObject *parent)
+    : QObject(parent), settings_manager(settingsManager), current_index_value(0)
 {
+    connect(settings_manager, &SettingsManager::modeChanged,
+            this, &Questions::on_mode_changed);
+
     load_configuration();
+}
+
+QString Questions::getConfigPath() const
+{
+    return settings_manager->getConfigFileName();
+}
+
+QString Questions::getQuestionPath(const QString &fileName) const
+{
+    QString folder = settings_manager->getQuestionsFolder();
+    return QString(":/%1/%2").arg(folder).arg(fileName);
 }
 
 bool Questions::load_configuration()
 {
-    QFile config_file(":/config.json");
+    QString configPath = getConfigPath();
+    QFile config_file(configPath);
+
     if (!config_file.open(QIODevice::ReadOnly))
     {
-        qDebug() << "Could not open config.json";
+        qDebug() << "Could not open config file:" << configPath;
         return false;
     }
 
@@ -21,7 +37,7 @@ bool Questions::load_configuration()
 
     if (config_doc.isNull())
     {
-        qDebug() << "Invalid JSON in config.json";
+        qDebug() << "Invalid JSON in config file:" << configPath;
         return false;
     }
 
@@ -73,7 +89,7 @@ bool Questions::load_level(int level_id)
         return false;
     }
 
-    QString file_path = QString(":/questions/%1").arg(file_name);
+    QString file_path = getQuestionPath(file_name);
     QFile level_file(file_path);
 
     if (!level_file.open(QIODevice::ReadOnly))
@@ -165,7 +181,7 @@ Question Questions::current_question()
     return Question();
 }
 
-LevelInfo Questions::current_level_info()
+CurrentLevelInfo Questions::current_level_info()
 {
     return current_level_info_data;
 }
@@ -203,4 +219,10 @@ int Questions::current_index()
 bool Questions::has_questions()
 {
     return !current_questions.isEmpty();
+}
+
+void Questions::on_mode_changed(QuizMode newMode)
+{
+    qDebug() << "Mode changed, reloading configuration for mode:" << static_cast<int>(newMode);
+    load_configuration();
 }

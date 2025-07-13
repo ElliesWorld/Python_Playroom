@@ -1,0 +1,51 @@
+{
+    "level_info": {
+        "id": 0,
+        "name": "C Fundamentals",
+        "description": "Introduction to C programming concepts",
+        "time_per_question": 30,
+        "total_questions": 3,
+        "difficulty": "Beginner"
+    },
+    "questions": [
+        {
+            "id": 1,
+            "question_text": "What is the correct file extension for C source files?",
+            "options": [
+                ".c",
+                ".cpp",
+                ".h",
+                ".py"
+            ],
+            "correct_answer": 0,
+            "explanation": "C source files use the .c extension. Header files use .h extension.",
+            "topic": "File Extensions"
+        },
+        {
+            "id": 2,
+            "question_text": "Which header file is required to use printf() in C?",
+            "options": [
+                "#include <iostream>",
+                "#include <stdio.h>",
+                "#include <string.h>",
+                "#include <stdlib.h>"
+            ],
+            "correct_answer": 1,
+            "explanation": "The <stdio.h> header provides standard input/output functions like printf(), scanf(), and file operations.",
+            "topic": "Headers"
+        },
+        {
+            "id": 3,
+            "question_text": "What is the entry point function in a C program?",
+            "options": [
+                "start()",
+                "begin()",
+                "main()",
+                "init()"
+            ],
+            "correct_answer": 2,
+            "explanation": "The main() function is the entry point of every C program. Program execution begins from the main function.",
+            "topic": "Program Structure"
+        }
+    ]
+}

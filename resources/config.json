@@ -1,17 +1,20 @@
 {
+  "quiz_info": {
+    "name": "Python Learning Quiz",
+    "version": "1.0.0",
+    "description": "Learn Python programming fundamentals through interactive quizzes"
+  },
   "levels": [
     {
       "id": 0,
       "name": "Programming Terminology",
-      "description": "Essential programming terms and concepts",
       "file": "level0_terminology.json",
       "unlocked": true,
-      "prerequisite": 0
+      "prerequisite": -1
     },
     {
       "id": 1,
       "name": "Python Basics",
-      "description": "Introduction to Python programming",
       "file": "level1_basics.json",
       "unlocked": true,
       "prerequisite": 0
@@ -19,7 +22,6 @@
     {
       "id": 2,
       "name": "Variables & Data Types",
-      "description": "Understanding Python variables and data types",
       "file": "level2_variables.json",
       "unlocked": false,
       "prerequisite": 1
@@ -27,7 +29,6 @@
     {
       "id": 3,
       "name": "Conditionals",
-      "description": "If statements and decision making",
       "file": "level3_conditionals.json",
       "unlocked": false,
       "prerequisite": 2
@@ -35,7 +36,6 @@
     {
       "id": 4,
       "name": "Loops",
-      "description": "For and while loops",
       "file": "level4_loops.json",
       "unlocked": false,
       "prerequisite": 3
@@ -43,7 +43,6 @@
     {
       "id": 5,
       "name": "Functions",
-      "description": "Creating and using functions",
       "file": "level5_functions.json",
       "unlocked": false,
       "prerequisite": 4

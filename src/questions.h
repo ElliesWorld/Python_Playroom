@@ -6,26 +6,34 @@
 #include <QJsonObject>
 #include <QJsonArray>
 #include <QVector>
-#include <QString>
-#include <QStringList>
 #include <QFile>
+#include <QDebug>
+#include "settings_manager.h"
 
-struct Question {
+struct LevelInfo
+{
+    int id;
+    QString name;
+    QString file_name;
+    bool unlocked;
+    int prerequisite;
+};
+
+struct Question
+{
     int id;
     QString question_text;
-    QStringList options;
+    QVector<QString> options;
     int correct_answer;
     QString explanation;
     QString topic;
 };
 
-struct LevelInfo {
+struct CurrentLevelInfo
+{
     int id;
     QString name;
     QString description;
-    QString file_name;
-    bool unlocked;
-    int prerequisite;
     int time_per_question;
     int total_questions;
     QString difficulty;
@@ -36,35 +44,43 @@ class Questions : public QObject
     Q_OBJECT
 
 public:
-    explicit Questions(QObject *parent = nullptr);
-    
+    explicit Questions(SettingsManager *settingsManager, QObject *parent = nullptr);
+
     bool load_configuration();
+    void parse_config_data();
+
     QVector<LevelInfo> available_levels();
-    bool load_level(int level_id);
     bool level_unlocked(int level_id);
     void unlock_level(int level_id);
-    
-    // Current level methods
+
+    bool load_level(int level_id);
+    void parse_level_data();
     Question current_question();
-    LevelInfo current_level_info();
-    int time_per_question();
-    QString level_name();
     bool move_to_next();
-    int total_questions();
-    int current_index();
     bool has_questions();
 
+    CurrentLevelInfo current_level_info();
+    int time_per_question();
+    QString level_name();
+    int total_questions();
+    int current_index();
+
+private slots:
+    void on_mode_changed(QuizMode newMode);
+
 private:
+    SettingsManager *settings_manager;
+
     QJsonDocument config_doc;
+    QVector<LevelInfo> levels_cache;
+
     QJsonDocument current_level;
     QVector<Question> current_questions;
-    LevelInfo current_level_info_data;
-    QString resource_path;
+    CurrentLevelInfo current_level_info_data;
     int current_index_value;
-    QVector<LevelInfo> levels_cache;
-    
-    void parse_level_data();
-    void parse_config_data();
+
+    QString getConfigPath() const;
+    QString getQuestionPath(const QString &fileName) const;
 };
 
-#endif
+#endif 

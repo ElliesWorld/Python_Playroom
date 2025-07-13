@@ -1,6 +1,6 @@
 #include "quiz.h"
 #include "sound_manager.h"
-
+#include <QStyle> // Add this include for QStyle
 #include <QDebug>
 
 Quiz::Quiz(Questions *questions, QWidget *parent)
@@ -55,7 +55,7 @@ void Quiz::setup_ui()
 
     // Create animation
     smiley_animation = new QPropertyAnimation(smiley_label, "geometry");
-    smiley_animation->setDuration(1500); 
+    smiley_animation->setDuration(1500);
     connect(smiley_animation, &QPropertyAnimation::finished, [this]()
             { smiley_label->setVisible(false); });
 
@@ -119,14 +119,14 @@ void Quiz::reset_quiz()
     explanation_shown = false;
     selected_answer = -1;
 
-    button_group->setExclusive(false); 
+    button_group->setExclusive(false);
     for (auto *button : option_buttons)
     {
         button->setChecked(false);
         button->setEnabled(true);
-        button->setAutoExclusive(false); 
+        button->setAutoExclusive(false);
     }
-    button_group->setExclusive(true); 
+    button_group->setExclusive(true);
 
     hide_explanation();
     next_button->setEnabled(false);
@@ -330,11 +330,11 @@ void Quiz::update_mute_button()
 {
     if (sound_manager->isMuted())
     {
-        mute_button->setText("🔇"); 
+        mute_button->setText("🔇");
     }
     else
     {
-        mute_button->setText("🔊"); 
+        mute_button->setText("🔊");
     }
 }
 
@@ -343,7 +343,6 @@ void Quiz::show_celebration()
     smiley_label->setVisible(true);
     smiley_label->setText("🎉 Great job! 🎉");
 
-    // Bounce animation
     QRect start = smiley_label->geometry();
     QRect middle = start.adjusted(0, -20, 0, -20); // Move up 20px
 
@@ -378,13 +377,11 @@ void Quiz::on_answer_selected()
         score++;
         sound_manager->playCorrectSound();
 
-        // Add celebration for fast answers
         if (time_remaining > 15)
-        { // Fast answer (within 5 seconds)
+        { 
             show_celebration();
         }
 
-        // Apply correct answer styling using property
         option_buttons[selected_answer]->setProperty("answerState", "correct");
         option_buttons[selected_answer]->style()->unpolish(option_buttons[selected_answer]);
         option_buttons[selected_answer]->style()->polish(option_buttons[selected_answer]);
@@ -393,12 +390,10 @@ void Quiz::on_answer_selected()
     {
         sound_manager->playWrongSound();
 
-        // Apply wrong answer styling to selected button
         option_buttons[selected_answer]->setProperty("answerState", "wrong");
         option_buttons[selected_answer]->style()->unpolish(option_buttons[selected_answer]);
         option_buttons[selected_answer]->style()->polish(option_buttons[selected_answer]);
 
-        // Apply correct answer styling to the right answer
         option_buttons[current.correct_answer]->setProperty("answerState", "correct");
         option_buttons[current.correct_answer]->style()->unpolish(option_buttons[current.correct_answer]);
         option_buttons[current.correct_answer]->style()->polish(option_buttons[current.correct_answer]);
@@ -411,4 +406,15 @@ void Quiz::on_answer_selected()
 
     learn_more_button->setEnabled(false);
     enable_navigation();
+}
+
+void Quiz::onModeChanged()
+{
+    countdown_timer->stop();
+    score = 0;
+    reset_quiz();
+
+    question_label->setText("Select a level to start the quiz");
+    progress_label->setText("Ready to start");
+    timer_label->setText("🕐 --");
 }

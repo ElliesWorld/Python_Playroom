@@ -1,0 +1,51 @@
+{
+    "quiz_info": {
+        "name": "C++ Learning Quiz",
+        "version": "1.0.0",
+        "description": "Learn C++ programming fundamentals through interactive quizzes"
+    },
+    "levels": [
+        {
+            "id": 0,
+            "name": "C++ Basics",
+            "file": "level0_cpp_basics.json",
+            "unlocked": true,
+            "prerequisite": -1
+        },
+        {
+            "id": 1,
+            "name": "Variables & Data Types",
+            "file": "level1_cpp_variables.json",
+            "unlocked": false,
+            "prerequisite": 0
+        },
+        {
+            "id": 2,
+            "name": "Control Structures",
+            "file": "level2_cpp_control.json",
+            "unlocked": false,
+            "prerequisite": 1
+        },
+        {
+            "id": 3,
+            "name": "Functions & Classes",
+            "file": "level3_cpp_functions.json",
+            "unlocked": false,
+            "prerequisite": 2
+        },
+        {
+            "id": 4,
+            "name": "Pointers & References",
+            "file": "level4_cpp_pointers.json",
+            "unlocked": false,
+            "prerequisite": 3
+        },
+        {
+            "id": 5,
+            "name": "STL & Templates",
+            "file": "level5_cpp_stl.json",
+            "unlocked": false,
+            "prerequisite": 4
+        }
+    ]
+}
