@@ -1,7 +1,7 @@
-# 🐍 Python Learning Quiz
+# 🐍⚡🔧 Python, C++, and C Learning Quiz
 
-A interactive quiz application designed to help aspiring developers learn Python programming.
-Built with C++ and Qt6, this application provides an engaging way to test and improve your Python knowledge through structured levels and instant feedback.
+A interactive quiz application designed to help aspiring developers learn Python/C++/C programming.
+Built with C++ and Qt6, this application provides an engaging way to test and improve your programming knowledge through structured levels and instant feedback.
 
 ![Python Quiz Interface](https://img.shields.io/badge/Language-C++-blue.svg)
 ![Qt Version](https://img.shields.io/badge/Qt-6.x-green.svg)
@@ -90,7 +90,7 @@ This project is built using:
 - **GUI Framework**: Qt6
 - **Build System**: CMake
 
-This is an ongoing educational project aimed at creating a comprehensive learning platform for programming languages, starting with Python.
+This is an ongoing educational project aimed at creating a comprehensive learning platform for programming languages, starting with Python, C++ and C.
 
 ---
 

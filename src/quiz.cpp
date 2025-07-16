@@ -397,6 +397,8 @@ void Quiz::on_answer_selected()
         option_buttons[current.correct_answer]->setProperty("answerState", "correct");
         option_buttons[current.correct_answer]->style()->unpolish(option_buttons[current.correct_answer]);
         option_buttons[current.correct_answer]->style()->polish(option_buttons[current.correct_answer]);
+
+        show_explanation();
     }
 
     for (auto *button : option_buttons)

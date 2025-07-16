@@ -32,7 +32,7 @@ if [ ! -f "CMakeLists.txt" ]; then
     exit 1
 fi
 
-print_status "Starting Python Quiz Build Process..."
+print_status "Starting Programming Quiz Build Process..."
 
 # Set Qt6 paths
 export PATH="/c/Qt/6.9.1/mingw_64/bin:$PATH"
@@ -76,4 +76,4 @@ else
     exit 1
 fi
 
-print_success "Python Quiz session ended. Thanks for playing!"
+print_success "Programming Quiz session ended. Thanks for playing!"
