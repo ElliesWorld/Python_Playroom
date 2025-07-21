@@ -1,1 +1,142 @@
-{"level_info":{"id":2,"name":"C++ Control","description":"Placeholder","time_per_question":30,"total_questions":1,"difficulty":"Beginner"},"questions":[{"id":1,"question_text":"Placeholder question","options":["A","B","C","D"],"correct_answer":0,"explanation":"Placeholder","topic":"Control"}]}
+{
+    "level_info": {
+        "id": 2,
+        "name": "C++ Control Structures",
+        "description": "Mastering if statements, loops, and control flow in C++",
+        "time_per_question": 35,
+        "total_questions": 10,
+        "difficulty": "Beginner"
+    },
+    "questions": [
+        {
+            "id": 1,
+            "question_text": "What is the correct syntax for an if statement in C++?",
+            "options": [
+                "if x > 5:",
+                "if (x > 5) {",
+                "if x > 5 then",
+                "if x > 5 do"
+            ],
+            "correct_answer": 1,
+            "explanation": "C++ if statements require parentheses around the condition and use curly braces for the code block.",
+            "topic": "If Statements"
+        },
+        {
+            "id": 2,
+            "question_text": "Which loop is guaranteed to execute at least once?",
+            "options": [
+                "for loop",
+                "while loop",
+                "do-while loop",
+                "range-based for loop"
+            ],
+            "correct_answer": 2,
+            "explanation": "A do-while loop checks the condition after executing the body, so it always runs at least once.",
+            "topic": "Loops"
+        },
+        {
+            "id": 3,
+            "question_text": "What is the C++11 range-based for loop syntax?",
+            "options": [
+                "for (auto x : container)",
+                "for (x in container)",
+                "for each (x in container)",
+                "for (auto x of container)"
+            ],
+            "correct_answer": 0,
+            "explanation": "C++11 introduced range-based for loops with the syntax 'for (auto element : container)'.",
+            "topic": "Range-based For"
+        },
+        {
+            "id": 4,
+            "question_text": "What does the 'break' statement do?",
+            "options": [
+                "Pauses the loop temporarily",
+                "Skips to next iteration",
+                "Exits the current loop",
+                "Restarts the loop"
+            ],
+            "correct_answer": 2,
+            "explanation": "The 'break' statement immediately exits the current loop or switch statement.",
+            "topic": "Break Statement"
+        },
+        {
+            "id": 5,
+            "question_text": "What does the 'continue' statement do?",
+            "options": [
+                "Exits the loop",
+                "Skips to the next iteration",
+                "Pauses execution",
+                "Repeats current iteration"
+            ],
+            "correct_answer": 1,
+            "explanation": "The 'continue' statement skips the rest of the current iteration and jumps to the next iteration.",
+            "topic": "Continue Statement"
+        },
+        {
+            "id": 6,
+            "question_text": "Which operator represents logical AND in C++?",
+            "options": [
+                "&",
+                "&&",
+                "and",
+                "+"
+            ],
+            "correct_answer": 1,
+            "explanation": "'&&' is the logical AND operator. '&' is the bitwise AND operator, which is different.",
+            "topic": "Logical Operators"
+        },
+        {
+            "id": 7,
+            "question_text": "What is the ternary operator in C++?",
+            "options": [
+                "? :",
+                "if else",
+                "switch case",
+                ": ?"
+            ],
+            "correct_answer": 0,
+            "explanation": "The ternary operator (? :) provides a compact way to write simple if-else statements: condition ? value_if_true : value_if_false.",
+            "topic": "Ternary Operator"
+        },
+        {
+            "id": 8,
+            "question_text": "What happens if you omit 'break' in a switch case?",
+            "options": [
+                "Compilation error",
+                "Program crashes",
+                "Fall-through to next case",
+                "Nothing, it's optional"
+            ],
+            "correct_answer": 2,
+            "explanation": "Without 'break', execution falls through to the next case, which is usually unintended behavior.",
+            "topic": "Switch Fall-through"
+        },
+        {
+            "id": 9,
+            "question_text": "Which is NOT a valid loop in C++?",
+            "options": [
+                "for loop",
+                "while loop",
+                "do-while loop",
+                "repeat-until loop"
+            ],
+            "correct_answer": 3,
+            "explanation": "C++ has for, while, and do-while loops, but no built-in repeat-until loop.",
+            "topic": "Loop Types"
+        },
+        {
+            "id": 10,
+            "question_text": "What is the correct syntax for a switch statement?",
+            "options": [
+                "switch (variable) { case value: }",
+                "switch variable { case value: }",
+                "switch (variable) case value:",
+                "case (variable) switch value:"
+            ],
+            "correct_answer": 0,
+            "explanation": "Switch statements require parentheses around the variable and use curly braces with case labels inside.",
+            "topic": "Switch Syntax"
+        }
+    ]
+}

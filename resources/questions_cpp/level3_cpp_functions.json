@@ -1,1 +1,142 @@
-{"level_info":{"id":3,"name":"C++ Functions","description":"Placeholder","time_per_question":30,"total_questions":1,"difficulty":"Beginner"},"questions":[{"id":1,"question_text":"Placeholder question","options":["A","B","C","D"],"correct_answer":0,"explanation":"Placeholder","topic":"Functions"}]}
+{
+    "level_info": {
+        "id": 3,
+        "name": "C++ Functions & Classes",
+        "description": "Understanding functions, classes, and object-oriented programming basics",
+        "time_per_question": 40,
+        "total_questions": 10,
+        "difficulty": "Intermediate"
+    },
+    "questions": [
+        {
+            "id": 1,
+            "question_text": "How do you declare a function in C++?",
+            "options": [
+                "function int myFunc()",
+                "int myFunc()",
+                "def myFunc() -> int",
+                "func myFunc() int"
+            ],
+            "correct_answer": 1,
+            "explanation": "C++ functions are declared with the return type first, followed by the function name and parameters.",
+            "topic": "Function Declaration"
+        },
+        {
+            "id": 2,
+            "question_text": "What is function overloading in C++?",
+            "options": [
+                "Functions with too many parameters",
+                "Multiple functions with the same name but different parameters",
+                "Functions that call themselves",
+                "Functions with return values"
+            ],
+            "correct_answer": 1,
+            "explanation": "Function overloading allows multiple functions to have the same name as long as they have different parameter lists.",
+            "topic": "Function Overloading"
+        },
+        {
+            "id": 3,
+            "question_text": "How do you define a class in C++?",
+            "options": [
+                "class MyClass { };",
+                "struct MyClass { };",
+                "object MyClass { };",
+                "Both A and B"
+            ],
+            "correct_answer": 3,
+            "explanation": "Both 'class' and 'struct' can define classes in C++. The only difference is default access level (private vs public).",
+            "topic": "Class Definition"
+        },
+        {
+            "id": 4,
+            "question_text": "What is a constructor in C++?",
+            "options": [
+                "A function that builds objects",
+                "A special member function called when an object is created",
+                "A function that destroys objects",
+                "A function that copies objects"
+            ],
+            "correct_answer": 1,
+            "explanation": "A constructor is a special member function automatically called when an object is created to initialize it.",
+            "topic": "Constructors"
+        },
+        {
+            "id": 5,
+            "question_text": "What is the scope resolution operator in C++?",
+            "options": [
+                ".",
+                "->",
+                "::",
+                ":"
+            ],
+            "correct_answer": 2,
+            "explanation": "The scope resolution operator (::) is used to access members of a namespace or class from outside their scope.",
+            "topic": "Scope Resolution"
+        },
+        {
+            "id": 6,
+            "question_text": "What are the three pillars of object-oriented programming?",
+            "options": [
+                "Classes, Objects, Methods",
+                "Encapsulation, Inheritance, Polymorphism",
+                "Public, Private, Protected",
+                "Constructor, Destructor, Methods"
+            ],
+            "correct_answer": 1,
+            "explanation": "The three main principles of OOP are Encapsulation (data hiding), Inheritance (code reuse), and Polymorphism (multiple forms).",
+            "topic": "OOP Principles"
+        },
+        {
+            "id": 7,
+            "question_text": "What is the default access level for class members in C++?",
+            "options": [
+                "public",
+                "private",
+                "protected",
+                "No default"
+            ],
+            "correct_answer": 1,
+            "explanation": "Class members are private by default in C++. Struct members are public by default.",
+            "topic": "Access Levels"
+        },
+        {
+            "id": 8,
+            "question_text": "What is a destructor in C++?",
+            "options": [
+                "A function that creates objects",
+                "A function called when an object is destroyed",
+                "A function that deletes variables",
+                "A function that handles errors"
+            ],
+            "correct_answer": 1,
+            "explanation": "A destructor is automatically called when an object goes out of scope or is explicitly deleted, used for cleanup.",
+            "topic": "Destructors"
+        },
+        {
+            "id": 9,
+            "question_text": "How do you pass parameters by reference in C++?",
+            "options": [
+                "void func(int x)",
+                "void func(int* x)",
+                "void func(int& x)",
+                "void func(ref int x)"
+            ],
+            "correct_answer": 2,
+            "explanation": "The ampersand (&) creates a reference parameter, allowing the function to modify the original variable.",
+            "topic": "Reference Parameters"
+        },
+        {
+            "id": 10,
+            "question_text": "What is method overriding in C++?",
+            "options": [
+                "Having multiple methods with same name",
+                "Replacing a base class method in derived class",
+                "Calling methods repeatedly",
+                "Using virtual functions"
+            ],
+            "correct_answer": 1,
+            "explanation": "Method overriding allows a derived class to provide a specific implementation of a method that's already defined in its base class.",
+            "topic": "Method Overriding"
+        }
+    ]
+}

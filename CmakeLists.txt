@@ -45,6 +45,10 @@ qt6_add_resources(programming_quiz "resources"
         
         resources/questions_cpp/level0_cpp_basics.json
         resources/questions_cpp/level1_cpp_variables.json
+        resources/questions_cpp/level2_cpp_control.json
+        resources/questions_cpp/level3_cpp_functions.json
+        resources/questions_cpp/level4_cpp_pointers.json
+        resources/questions_cpp/level5_cpp_stl.json
         
         resources/questions_c/level0_c_basics.json
         resources/questions_c/level1_c_variables.json

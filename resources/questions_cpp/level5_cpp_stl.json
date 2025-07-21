@@ -1,1 +1,142 @@
-{"level_info":{"id":5,"name":"C++ STL","description":"Placeholder","time_per_question":30,"total_questions":1,"difficulty":"Beginner"},"questions":[{"id":1,"question_text":"Placeholder question","options":["A","B","C","D"],"correct_answer":0,"explanation":"Placeholder","topic":"STL"}]}
+{
+    "level_info": {
+        "id": 5,
+        "name": "C++ STL & Templates",
+        "description": "Mastering the Standard Template Library and template programming",
+        "time_per_question": 50,
+        "total_questions": 10,
+        "difficulty": "Advanced"
+    },
+    "questions": [
+        {
+            "id": 1,
+            "question_text": "What does STL stand for?",
+            "options": [
+                "Standard Type Library",
+                "Standard Template Library",
+                "System Template Library",
+                "Static Type Library"
+            ],
+            "correct_answer": 1,
+            "explanation": "STL stands for Standard Template Library, which provides a collection of template classes and functions.",
+            "topic": "STL Overview"
+        },
+        {
+            "id": 2,
+            "question_text": "Which header is needed to use std::vector?",
+            "options": [
+                "<array>",
+                "<vector>",
+                "<list>",
+                "<container>"
+            ],
+            "correct_answer": 1,
+            "explanation": "The <vector> header is required to use the std::vector container class.",
+            "topic": "STL Headers"
+        },
+        {
+            "id": 3,
+            "question_text": "How do you declare a vector of integers?",
+            "options": [
+                "vector<int> v;",
+                "std::vector<int> v;",
+                "vector v<int>;",
+                "Both A and B"
+            ],
+            "correct_answer": 3,
+            "explanation": "Both syntaxes work. The second explicitly uses the std namespace, while the first assumes 'using namespace std' or a using declaration.",
+            "topic": "Vector Declaration"
+        },
+        {
+            "id": 4,
+            "question_text": "What is a template in C++?",
+            "options": [
+                "A pre-written class",
+                "A blueprint for creating generic classes or functions",
+                "A design pattern",
+                "A header file"
+            ],
+            "correct_answer": 1,
+            "explanation": "Templates allow you to write generic code that works with different data types, determined at compile time.",
+            "topic": "Templates"
+        },
+        {
+            "id": 5,
+            "question_text": "How do you add an element to the end of a vector?",
+            "options": [
+                "v.add(element)",
+                "v.append(element)",
+                "v.push_back(element)",
+                "v.insert(element)"
+            ],
+            "correct_answer": 2,
+            "explanation": "The push_back() method adds an element to the end of a vector.",
+            "topic": "Vector Operations"
+        },
+        {
+            "id": 6,
+            "question_text": "Which STL container is best for frequent insertions/deletions in the middle?",
+            "options": [
+                "vector",
+                "array",
+                "list",
+                "stack"
+            ],
+            "correct_answer": 2,
+            "explanation": "std::list (doubly-linked list) provides O(1) insertion/deletion at any position if you have an iterator to that position.",
+            "topic": "STL Containers"
+        },
+        {
+            "id": 7,
+            "question_text": "What is an iterator in C++?",
+            "options": [
+                "A loop counter",
+                "An object that points to elements in a container",
+                "A function that repeats operations",
+                "A template parameter"
+            ],
+            "correct_answer": 1,
+            "explanation": "Iterators are objects that point to elements in containers and provide a way to traverse through them.",
+            "topic": "Iterators"
+        },
+        {
+            "id": 8,
+            "question_text": "Which algorithm header is commonly used with STL?",
+            "options": [
+                "<algorithms>",
+                "<algorithm>",
+                "<algo>",
+                "<stl_algo>"
+            ],
+            "correct_answer": 1,
+            "explanation": "The <algorithm> header contains many useful algorithms like sort, find, copy, etc.",
+            "topic": "STL Algorithms"
+        },
+        {
+            "id": 9,
+            "question_text": "How do you sort a vector using STL?",
+            "options": [
+                "v.sort()",
+                "sort(v)",
+                "std::sort(v.begin(), v.end())",
+                "std::sort(v)"
+            ],
+            "correct_answer": 2,
+            "explanation": "std::sort() takes iterators to the beginning and end of the range to sort.",
+            "topic": "STL Sort"
+        },
+        {
+            "id": 10,
+            "question_text": "What is the difference between std::map and std::unordered_map?",
+            "options": [
+                "No difference",
+                "map is sorted, unordered_map uses hash table",
+                "map is faster than unordered_map",
+                "unordered_map can't store duplicates"
+            ],
+            "correct_answer": 1,
+            "explanation": "std::map maintains sorted order (usually red-black tree), while std::unordered_map uses hash table for faster average access.",
+            "topic": "Associative Containers"
+        }
+    ]
+}

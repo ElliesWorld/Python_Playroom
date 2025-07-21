@@ -41,18 +41,18 @@ void Quiz::setup_ui()
     top_layout->addWidget(timer_label);
 
     main_layout->addLayout(top_layout);
+
     smiley_label = new QLabel("🎉");
     smiley_label->setObjectName("smiley_label");
     smiley_label->setAlignment(Qt::AlignCenter);
     smiley_label->setVisible(false);
-    main_layout->addWidget(smiley_label);
+    smiley_label->setParent(this);
 
     question_label = new QLabel("Question will appear here");
     question_label->setObjectName("question_label");
     question_label->setWordWrap(true);
     main_layout->addWidget(question_label);
 
-    // Create animation
     smiley_animation = new QPropertyAnimation(smiley_label, "geometry");
     smiley_animation->setDuration(1500);
     connect(smiley_animation, &QPropertyAnimation::finished, [this]()
@@ -339,11 +339,22 @@ void Quiz::update_mute_button()
 
 void Quiz::show_celebration(const QString &message)
 {
-    smiley_label->setVisible(true);
     smiley_label->setText(message);
 
+    smiley_label->adjustSize();
+
+    QPoint overlay_pos = question_label->pos();
+    overlay_pos.setY(overlay_pos.y() - 60); 
+
+    int center_x = question_label->pos().x() + (question_label->width() / 2) - (smiley_label->width() / 2);
+    overlay_pos.setX(center_x);
+
+    smiley_label->move(overlay_pos);
+    smiley_label->setVisible(true);
+    smiley_label->raise();
+
     QRect start = smiley_label->geometry();
-    QRect middle = start.adjusted(0, -15, 0, -15); // Smaller bounce (15px instead of 20px)
+    QRect middle = start.adjusted(0, -8, 0, -8);
 
     smiley_animation->setKeyValueAt(0, start);
     smiley_animation->setKeyValueAt(0.5, middle);

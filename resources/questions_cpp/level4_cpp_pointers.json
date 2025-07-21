@@ -1,1 +1,142 @@
-{"level_info":{"id":4,"name":"C++ Pointers","description":"Placeholder","time_per_question":30,"total_questions":1,"difficulty":"Beginner"},"questions":[{"id":1,"question_text":"Placeholder question","options":["A","B","C","D"],"correct_answer":0,"explanation":"Placeholder","topic":"Pointers"}]}
+{
+    "level_info": {
+        "id": 4,
+        "name": "C++ Pointers & References",
+        "description": "Understanding pointers, references, and memory management in C++",
+        "time_per_question": 45,
+        "total_questions": 10,
+        "difficulty": "Advanced"
+    },
+    "questions": [
+        {
+            "id": 1,
+            "question_text": "How do you declare a pointer in C++?",
+            "options": [
+                "int ptr",
+                "int *ptr",
+                "int &ptr",
+                "pointer int ptr"
+            ],
+            "correct_answer": 1,
+            "explanation": "The asterisk (*) is used to declare a pointer. 'int *ptr' declares a pointer that can hold the address of an integer.",
+            "topic": "Pointer Declaration"
+        },
+        {
+            "id": 2,
+            "question_text": "What is the difference between a pointer and a reference?",
+            "options": [
+                "No difference",
+                "Pointers can be reassigned, references cannot",
+                "References use *, pointers use &",
+                "Pointers are faster than references"
+            ],
+            "correct_answer": 1,
+            "explanation": "Pointers can be reassigned to point to different objects and can be null. References must be initialized and cannot be reassigned.",
+            "topic": "Pointers vs References"
+        },
+        {
+            "id": 3,
+            "question_text": "What does the 'new' operator do in C++?",
+            "options": [
+                "Creates a new variable",
+                "Allocates memory on the heap and returns a pointer",
+                "Creates a copy of an object",
+                "Initializes variables to zero"
+            ],
+            "correct_answer": 1,
+            "explanation": "The 'new' operator allocates memory on the heap and returns a pointer to the allocated memory.",
+            "topic": "Dynamic Memory"
+        },
+        {
+            "id": 4,
+            "question_text": "What operator is used to deallocate memory allocated with 'new'?",
+            "options": [
+                "free",
+                "delete",
+                "remove",
+                "destroy"
+            ],
+            "correct_answer": 1,
+            "explanation": "The 'delete' operator is used to deallocate memory that was allocated with 'new'.",
+            "topic": "Memory Deallocation"
+        },
+        {
+            "id": 5,
+            "question_text": "What is a smart pointer in C++?",
+            "options": [
+                "A pointer that's very fast",
+                "A pointer that automatically manages memory",
+                "A pointer that can point to multiple objects",
+                "A pointer with built-in error checking"
+            ],
+            "correct_answer": 1,
+            "explanation": "Smart pointers automatically manage memory, helping prevent memory leaks and dangling pointers.",
+            "topic": "Smart Pointers"
+        },
+        {
+            "id": 6,
+            "question_text": "Which header is needed for smart pointers in C++11?",
+            "options": [
+                "<smart_ptr>",
+                "<memory>",
+                "<pointers>",
+                "<auto_ptr>"
+            ],
+            "correct_answer": 1,
+            "explanation": "The <memory> header contains smart pointer classes like unique_ptr, shared_ptr, and weak_ptr.",
+            "topic": "Smart Pointer Headers"
+        },
+        {
+            "id": 7,
+            "question_text": "What is a nullptr in C++11?",
+            "options": [
+                "A new type of pointer",
+                "A null pointer literal",
+                "A smart pointer",
+                "An empty string pointer"
+            ],
+            "correct_answer": 1,
+            "explanation": "nullptr is a keyword introduced in C++11 that represents a null pointer literal, replacing the use of NULL or 0.",
+            "topic": "Nullptr"
+        },
+        {
+            "id": 8,
+            "question_text": "What is pointer arithmetic?",
+            "options": [
+                "Mathematical operations on pointer addresses",
+                "Adding/subtracting integers to/from pointers",
+                "Multiplying pointers",
+                "Comparing pointer values"
+            ],
+            "correct_answer": 1,
+            "explanation": "Pointer arithmetic involves adding or subtracting integers to move the pointer to adjacent memory locations.",
+            "topic": "Pointer Arithmetic"
+        },
+        {
+            "id": 9,
+            "question_text": "What is RAII in C++?",
+            "options": [
+                "Really Advanced Integer Initialization",
+                "Resource Acquisition Is Initialization",
+                "Random Access Iterator Interface",
+                "Runtime Automatic Instance Initialization"
+            ],
+            "correct_answer": 1,
+            "explanation": "RAII (Resource Acquisition Is Initialization) is a programming technique where resources are acquired in constructors and released in destructors.",
+            "topic": "RAII"
+        },
+        {
+            "id": 10,
+            "question_text": "What happens if you access a dangling pointer?",
+            "options": [
+                "Compilation error",
+                "Undefined behavior",
+                "Program automatically fixes it",
+                "Returns null"
+            ],
+            "correct_answer": 1,
+            "explanation": "Accessing a dangling pointer (pointer to deallocated memory) results in undefined behavior, which can cause crashes or data corruption.",
+            "topic": "Dangling Pointers"
+        }
+    ]
+}
