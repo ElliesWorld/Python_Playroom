@@ -1,1 +1,142 @@
-{"level_info":{"id":4,"name":"C Pointers","description":"Placeholder","time_per_question":30,"total_questions":1,"difficulty":"Beginner"},"questions":[{"id":1,"question_text":"Placeholder question","options":["A","B","C","D"],"correct_answer":0,"explanation":"Placeholder","topic":"Pointers"}]}
+{
+    "level_info": {
+        "id": 4,
+        "name": "C Pointers & Memory",
+        "description": "Understanding pointers, memory allocation, and address manipulation",
+        "time_per_question": 45,
+        "total_questions": 10,
+        "difficulty": "Advanced"
+    },
+    "questions": [
+        {
+            "id": 1,
+            "question_text": "How do you declare a pointer to an integer in C?",
+            "options": [
+                "int ptr",
+                "int *ptr",
+                "int &ptr",
+                "pointer int ptr"
+            ],
+            "correct_answer": 1,
+            "explanation": "The asterisk (*) is used to declare a pointer. 'int *ptr' declares a pointer that can hold the address of an integer.",
+            "topic": "Pointer Declaration"
+        },
+        {
+            "id": 2,
+            "question_text": "What does the dereference operator (*) do?",
+            "options": [
+                "Gets the address of a variable",
+                "Accesses the value at the address",
+                "Declares a pointer",
+                "Multiplies two numbers"
+            ],
+            "correct_answer": 1,
+            "explanation": "The dereference operator (*) accesses the value stored at the memory address that the pointer contains.",
+            "topic": "Dereferencing"
+        },
+        {
+            "id": 3,
+            "question_text": "What is a NULL pointer?",
+            "options": [
+                "A pointer with value 0",
+                "A pointer that points to nothing valid",
+                "An uninitialized pointer",
+                "Both A and B"
+            ],
+            "correct_answer": 3,
+            "explanation": "A NULL pointer has the value 0 and points to no valid memory location. It's used to indicate that a pointer doesn't point to anything.",
+            "topic": "NULL Pointers"
+        },
+        {
+            "id": 4,
+            "question_text": "Which function is used to allocate memory dynamically?",
+            "options": [
+                "alloc()",
+                "malloc()",
+                "new()",
+                "create()"
+            ],
+            "correct_answer": 1,
+            "explanation": "malloc() (memory allocate) is used to dynamically allocate memory during runtime. It returns a pointer to the allocated memory.",
+            "topic": "Dynamic Memory"
+        },
+        {
+            "id": 5,
+            "question_text": "Which function should be used to free dynamically allocated memory?",
+            "options": [
+                "delete()",
+                "free()",
+                "remove()",
+                "clear()"
+            ],
+            "correct_answer": 1,
+            "explanation": "free() is used to deallocate memory that was previously allocated with malloc(), calloc(), or realloc().",
+            "topic": "Memory Deallocation"
+        },
+        {
+            "id": 6,
+            "question_text": "What happens if you don't free dynamically allocated memory?",
+            "options": [
+                "Nothing",
+                "Memory leak occurs",
+                "Program crashes",
+                "Automatic cleanup"
+            ],
+            "correct_answer": 1,
+            "explanation": "Not freeing dynamically allocated memory causes memory leaks, where memory remains allocated but is no longer accessible.",
+            "topic": "Memory Leaks"
+        },
+        {
+            "id": 7,
+            "question_text": "What is pointer arithmetic?",
+            "options": [
+                "Mathematical operations on pointer values",
+                "Adding/subtracting integers to/from pointers",
+                "Calculating pointer sizes",
+                "Comparing pointers"
+            ],
+            "correct_answer": 1,
+            "explanation": "Pointer arithmetic involves adding or subtracting integers to/from pointers to navigate through memory, especially useful with arrays.",
+            "topic": "Pointer Arithmetic"
+        },
+        {
+            "id": 8,
+            "question_text": "What is a double pointer (pointer to pointer)?",
+            "options": [
+                "A pointer that points twice",
+                "A pointer that holds the address of another pointer",
+                "Two pointers declared together",
+                "A pointer with double precision"
+            ],
+            "correct_answer": 1,
+            "explanation": "A double pointer (int **ptr) holds the address of another pointer. It's useful for functions that need to modify pointer values.",
+            "topic": "Double Pointers"
+        },
+        {
+            "id": 9,
+            "question_text": "What's the relationship between arrays and pointers in C?",
+            "options": [
+                "They are completely different",
+                "Array names are constant pointers",
+                "Arrays can't use pointers",
+                "Pointers can't access arrays"
+            ],
+            "correct_answer": 1,
+            "explanation": "In C, an array name acts like a constant pointer to the first element of the array. You can use pointer notation with arrays.",
+            "topic": "Arrays and Pointers"
+        },
+        {
+            "id": 10,
+            "question_text": "What does 'segmentation fault' typically indicate?",
+            "options": [
+                "Syntax error",
+                "Accessing invalid memory location",
+                "Division by zero",
+                "File not found"
+            ],
+            "correct_answer": 1,
+            "explanation": "Segmentation fault occurs when a program tries to access memory it's not allowed to access, often due to dereferencing invalid pointers.",
+            "topic": "Memory Errors"
+        }
+    ]
+}

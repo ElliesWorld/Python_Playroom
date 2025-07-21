@@ -1,1 +1,142 @@
-{"level_info":{"id":1,"name":"C Variables","description":"Placeholder","time_per_question":30,"total_questions":1,"difficulty":"Beginner"},"questions":[{"id":1,"question_text":"Placeholder question","options":["A","B","C","D"],"correct_answer":0,"explanation":"Placeholder","topic":"Variables"}]}
+{
+    "level_info": {
+        "id": 1,
+        "name": "C Variables & Data Types",
+        "description": "Understanding C variables, data types, and memory management",
+        "time_per_question": 30,
+        "total_questions": 10,
+        "difficulty": "Beginner"
+    },
+    "questions": [
+        {
+            "id": 1,
+            "question_text": "Which of the following is a valid variable name in C?",
+            "options": [
+                "int",
+                "_variable",
+                "2variable",
+                "variable-name"
+            ],
+            "correct_answer": 1,
+            "explanation": "Variable names in C can start with a letter or underscore, but not with a number or contain hyphens. 'int' is a reserved keyword.",
+            "topic": "Variable Naming"
+        },
+        {
+            "id": 2,
+            "question_text": "What is the size of an 'int' data type in most modern systems?",
+            "options": [
+                "2 bytes",
+                "4 bytes",
+                "8 bytes",
+                "1 byte"
+            ],
+            "correct_answer": 1,
+            "explanation": "On most modern 32-bit and 64-bit systems, an 'int' is typically 4 bytes (32 bits), though this can vary by system.",
+            "topic": "Data Types"
+        },
+        {
+            "id": 3,
+            "question_text": "How do you declare a constant in C?",
+            "options": [
+                "constant int x = 5;",
+                "const int x = 5;",
+                "final int x = 5;",
+                "static int x = 5;"
+            ],
+            "correct_answer": 1,
+            "explanation": "The 'const' keyword is used to declare constants in C. Once initialized, const variables cannot be modified.",
+            "topic": "Constants"
+        },
+        {
+            "id": 4,
+            "question_text": "What is the correct way to declare multiple variables of the same type?",
+            "options": [
+                "int a; int b; int c;",
+                "int a, b, c;",
+                "int a b c;",
+                "Both A and B"
+            ],
+            "correct_answer": 3,
+            "explanation": "You can declare multiple variables either on separate lines or on the same line separated by commas. Both methods are valid.",
+            "topic": "Variable Declaration"
+        },
+        {
+            "id": 5,
+            "question_text": "Which data type is used to store a single character in C?",
+            "options": [
+                "string",
+                "char",
+                "character",
+                "byte"
+            ],
+            "correct_answer": 1,
+            "explanation": "The 'char' data type stores a single character and occupies 1 byte of memory. C doesn't have a built-in string data type.",
+            "topic": "Character Data Type"
+        },
+        {
+            "id": 6,
+            "question_text": "What happens to uninitialized local variables in C?",
+            "options": [
+                "They are set to 0",
+                "They contain garbage values",
+                "They are set to NULL",
+                "Compilation error occurs"
+            ],
+            "correct_answer": 1,
+            "explanation": "Uninitialized local variables contain garbage values (whatever was previously in that memory location). Always initialize variables before use.",
+            "topic": "Variable Initialization"
+        },
+        {
+            "id": 7,
+            "question_text": "Which operator is used to get the address of a variable?",
+            "options": [
+                "* (asterisk)",
+                "& (ampersand)",
+                "# (hash)",
+                "@ (at symbol)"
+            ],
+            "correct_answer": 1,
+            "explanation": "The '&' operator (address-of operator) returns the memory address of a variable. This is fundamental for pointer operations.",
+            "topic": "Address Operator"
+        },
+        {
+            "id": 8,
+            "question_text": "What is the range of values for an unsigned char?",
+            "options": [
+                "-128 to 127",
+                "0 to 255",
+                "-255 to 255",
+                "0 to 127"
+            ],
+            "correct_answer": 1,
+            "explanation": "An unsigned char uses 8 bits (1 byte) and can represent values from 0 to 255. A signed char ranges from -128 to 127.",
+            "topic": "Data Type Ranges"
+        },
+        {
+            "id": 9,
+            "question_text": "Which format specifier is used to print an integer in printf()?",
+            "options": [
+                "%s",
+                "%d",
+                "%c",
+                "%f"
+            ],
+            "correct_answer": 1,
+            "explanation": "%d is used for integers, %s for strings, %c for characters, and %f for floating-point numbers.",
+            "topic": "Format Specifiers"
+        },
+        {
+            "id": 10,
+            "question_text": "What is the difference between '5' and 5 in C?",
+            "options": [
+                "No difference",
+                "'5' is a character, 5 is an integer",
+                "'5' is a string, 5 is a number",
+                "'5' is invalid syntax"
+            ],
+            "correct_answer": 1,
+            "explanation": "'5' (with quotes) is a character literal with ASCII value 53, while 5 is an integer literal with value 5.",
+            "topic": "Literals"
+        }
+    ]
+}

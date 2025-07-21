@@ -1,1 +1,142 @@
-{"level_info":{"id":3,"name":"C Functions","description":"Placeholder","time_per_question":30,"total_questions":1,"difficulty":"Beginner"},"questions":[{"id":1,"question_text":"Placeholder question","options":["A","B","C","D"],"correct_answer":0,"explanation":"Placeholder","topic":"Functions"}]}
+{
+    "level_info": {
+        "id": 3,
+        "name": "C Functions",
+        "description": "Understanding function declaration, definition, and parameter passing",
+        "time_per_question": 40,
+        "total_questions": 10,
+        "difficulty": "Intermediate"
+    },
+    "questions": [
+        {
+            "id": 1,
+            "question_text": "What is the correct way to declare a function that returns an integer?",
+            "options": [
+                "function int myFunc()",
+                "int myFunc()",
+                "myFunc() -> int",
+                "def myFunc() int"
+            ],
+            "correct_answer": 1,
+            "explanation": "C functions are declared with the return type first, followed by the function name and parameters in parentheses.",
+            "topic": "Function Declaration"
+        },
+        {
+            "id": 2,
+            "question_text": "What does 'void' mean as a return type?",
+            "options": [
+                "Returns an empty string",
+                "Returns 0",
+                "Returns nothing",
+                "Returns NULL"
+            ],
+            "correct_answer": 2,
+            "explanation": "'void' indicates that the function doesn't return any value. Such functions are used for their side effects.",
+            "topic": "Void Functions"
+        },
+        {
+            "id": 3,
+            "question_text": "How are arguments passed to functions in C by default?",
+            "options": [
+                "By reference",
+                "By value",
+                "By pointer",
+                "By address"
+            ],
+            "correct_answer": 1,
+            "explanation": "C passes arguments by value, meaning a copy of the variable is passed. To modify the original, you need pointers.",
+            "topic": "Parameter Passing"
+        },
+        {
+            "id": 4,
+            "question_text": "What is a function prototype?",
+            "options": [
+                "The function's implementation",
+                "A declaration without implementation",
+                "The first function in a program",
+                "A template for functions"
+            ],
+            "correct_answer": 1,
+            "explanation": "A function prototype declares the function's signature (name, return type, parameters) without the implementation body.",
+            "topic": "Function Prototypes"
+        },
+        {
+            "id": 5,
+            "question_text": "Which keyword is used to return a value from a function?",
+            "options": [
+                "give",
+                "return",
+                "send",
+                "output"
+            ],
+            "correct_answer": 1,
+            "explanation": "The 'return' keyword is used to exit a function and optionally return a value to the caller.",
+            "topic": "Return Statement"
+        },
+        {
+            "id": 6,
+            "question_text": "What happens if a function doesn't have a return statement but declares a return type?",
+            "options": [
+                "Compilation error",
+                "Returns garbage value",
+                "Returns 0",
+                "Program crashes"
+            ],
+            "correct_answer": 1,
+            "explanation": "If a non-void function doesn't return a value, it returns a garbage value, leading to undefined behavior.",
+            "topic": "Missing Return"
+        },
+        {
+            "id": 7,
+            "question_text": "What is recursion in C?",
+            "options": [
+                "A function calling another function",
+                "A function calling itself",
+                "A loop inside a function",
+                "Multiple functions with same name"
+            ],
+            "correct_answer": 1,
+            "explanation": "Recursion occurs when a function calls itself. It's useful for problems that can be broken into smaller, similar subproblems.",
+            "topic": "Recursion"
+        },
+        {
+            "id": 8,
+            "question_text": "What is the scope of a local variable in a function?",
+            "options": [
+                "Entire program",
+                "Only within that function",
+                "All functions in the file",
+                "Until program ends"
+            ],
+            "correct_answer": 1,
+            "explanation": "Local variables declared inside a function are only accessible within that function and are destroyed when the function ends.",
+            "topic": "Variable Scope"
+        },
+        {
+            "id": 9,
+            "question_text": "What is the difference between parameters and arguments?",
+            "options": [
+                "No difference",
+                "Parameters are in declaration, arguments are passed values",
+                "Parameters are numbers, arguments are strings",
+                "Parameters come first, arguments come second"
+            ],
+            "correct_answer": 1,
+            "explanation": "Parameters are variables in the function declaration/definition. Arguments are the actual values passed when calling the function.",
+            "topic": "Parameters vs Arguments"
+        },
+        {
+            "id": 10,
+            "question_text": "What is the maximum number of parameters a C function can have?",
+            "options": [
+                "10",
+                "255",
+                "No practical limit",
+                "32"
+            ],
+            "correct_answer": 2,
+            "explanation": "C doesn't impose a strict limit on function parameters, though very large numbers may hit compiler or system limits.",
+            "topic": "Function Limits"
+        }
+    ]
+}

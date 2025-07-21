@@ -1,1 +1,142 @@
-{"level_info":{"id":5,"name":"C Structures","description":"Placeholder","time_per_question":30,"total_questions":1,"difficulty":"Beginner"},"questions":[{"id":1,"question_text":"Placeholder question","options":["A","B","C","D"],"correct_answer":0,"explanation":"Placeholder","topic":"Structures"}]}
+{
+    "level_info": {
+        "id": 5,
+        "name": "C Structures & Files",
+        "description": "Working with structures, unions, and file input/output operations",
+        "time_per_question": 45,
+        "total_questions": 10,
+        "difficulty": "Advanced"
+    },
+    "questions": [
+        {
+            "id": 1,
+            "question_text": "How do you define a structure in C?",
+            "options": [
+                "class MyStruct { };",
+                "struct MyStruct { };",
+                "structure MyStruct { };",
+                "type MyStruct = struct { };"
+            ],
+            "correct_answer": 1,
+            "explanation": "Structures in C are defined using the 'struct' keyword followed by the structure name and member variables in braces.",
+            "topic": "Structure Definition"
+        },
+        {
+            "id": 2,
+            "question_text": "How do you access a member of a structure using a pointer?",
+            "options": [
+                "ptr.member",
+                "ptr->member",
+                "ptr::member",
+                "*ptr.member"
+            ],
+            "correct_answer": 1,
+            "explanation": "The arrow operator (->) is used to access structure members through a pointer. It's equivalent to (*ptr).member.",
+            "topic": "Structure Pointers"
+        },
+        {
+            "id": 3,
+            "question_text": "What is the difference between a structure and a union?",
+            "options": [
+                "No difference",
+                "Structures store all members, unions share memory",
+                "Unions are larger than structures",
+                "Structures are faster than unions"
+            ],
+            "correct_answer": 1,
+            "explanation": "In structures, each member has its own memory space. In unions, all members share the same memory location.",
+            "topic": "Structures vs Unions"
+        },
+        {
+            "id": 4,
+            "question_text": "Which function is used to open a file in C?",
+            "options": [
+                "open()",
+                "fopen()",
+                "file_open()",
+                "openfile()"
+            ],
+            "correct_answer": 1,
+            "explanation": "fopen() is the standard C library function for opening files. It returns a FILE pointer for subsequent file operations.",
+            "topic": "File Opening"
+        },
+        {
+            "id": 5,
+            "question_text": "What does the 'w' mode mean in fopen()?",
+            "options": [
+                "Read only",
+                "Write only (truncate if exists)",
+                "Append mode",
+                "Read and write"
+            ],
+            "correct_answer": 1,
+            "explanation": "'w' mode opens a file for writing. If the file exists, it's truncated to zero length. If it doesn't exist, it's created.",
+            "topic": "File Modes"
+        },
+        {
+            "id": 6,
+            "question_text": "Which function is used to close a file?",
+            "options": [
+                "close()",
+                "fclose()",
+                "file_close()",
+                "end_file()"
+            ],
+            "correct_answer": 1,
+            "explanation": "fclose() closes the file associated with the given FILE pointer and flushes any buffered data.",
+            "topic": "File Closing"
+        },
+        {
+            "id": 7,
+            "question_text": "What does typedef do in C?",
+            "options": [
+                "Defines a new data type",
+                "Creates an alias for existing types",
+                "Declares a variable",
+                "Imports a library"
+            ],
+            "correct_answer": 1,
+            "explanation": "typedef creates an alias (alternative name) for existing data types, making code more readable and maintainable.",
+            "topic": "Typedef"
+        },
+        {
+            "id": 8,
+            "question_text": "How do you read a character from a file?",
+            "options": [
+                "getc(file)",
+                "fgetc(file)",
+                "read_char(file)",
+                "Both A and B"
+            ],
+            "correct_answer": 3,
+            "explanation": "Both getc() and fgetc() can read a character from a file. fgetc() is a function, while getc() may be implemented as a macro.",
+            "topic": "File Reading"
+        },
+        {
+            "id": 9,
+            "question_text": "What is the size of a structure in memory?",
+            "options": [
+                "Sum of all member sizes",
+                "Size of largest member",
+                "Sum of members plus padding",
+                "Always 8 bytes"
+            ],
+            "correct_answer": 2,
+            "explanation": "Structure size includes the sum of all members plus any padding added by the compiler for memory alignment.",
+            "topic": "Structure Memory"
+        },
+        {
+            "id": 10,
+            "question_text": "What is structure padding?",
+            "options": [
+                "Extra space for future members",
+                "Memory alignment optimization",
+                "Error in structure definition",
+                "Unused structure members"
+            ],
+            "correct_answer": 1,
+            "explanation": "Structure padding is extra bytes added by the compiler to ensure proper memory alignment for efficient access.",
+            "topic": "Memory Alignment"
+        }
+    ]
+}

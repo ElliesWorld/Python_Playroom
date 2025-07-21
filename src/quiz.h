@@ -10,6 +10,7 @@
 #include <QButtonGroup>
 #include <QTimer>
 #include <QPropertyAnimation>
+#include <QString>
 #include "questions.h"
 
 class SoundManager;
@@ -47,7 +48,7 @@ private:
     void enable_navigation();
     void disable_navigation();
     void update_mute_button();
-    void show_celebration();
+    void show_celebration(const QString &message = "🎉 Great job! 🎉");
 
     Questions *question_manager;
     SoundManager *sound_manager;

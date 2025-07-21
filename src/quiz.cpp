@@ -41,17 +41,16 @@ void Quiz::setup_ui()
     top_layout->addWidget(timer_label);
 
     main_layout->addLayout(top_layout);
-
-    question_label = new QLabel("Question will appear here");
-    question_label->setObjectName("question_label");
-    question_label->setWordWrap(true);
-    main_layout->addWidget(question_label);
-
     smiley_label = new QLabel("🎉");
     smiley_label->setObjectName("smiley_label");
     smiley_label->setAlignment(Qt::AlignCenter);
     smiley_label->setVisible(false);
     main_layout->addWidget(smiley_label);
+
+    question_label = new QLabel("Question will appear here");
+    question_label->setObjectName("question_label");
+    question_label->setWordWrap(true);
+    main_layout->addWidget(question_label);
 
     // Create animation
     smiley_animation = new QPropertyAnimation(smiley_label, "geometry");
@@ -338,13 +337,13 @@ void Quiz::update_mute_button()
     }
 }
 
-void Quiz::show_celebration()
+void Quiz::show_celebration(const QString &message)
 {
     smiley_label->setVisible(true);
-    smiley_label->setText("🎉 Great job! 🎉");
+    smiley_label->setText(message);
 
     QRect start = smiley_label->geometry();
-    QRect middle = start.adjusted(0, -20, 0, -20); // Move up 20px
+    QRect middle = start.adjusted(0, -15, 0, -15); // Smaller bounce (15px instead of 20px)
 
     smiley_animation->setKeyValueAt(0, start);
     smiley_animation->setKeyValueAt(0.5, middle);
@@ -377,9 +376,15 @@ void Quiz::on_answer_selected()
         score++;
         sound_manager->playCorrectSound();
 
-        if (time_remaining > 15)
-        { 
-            show_celebration();
+        // Add celebration for fast answers
+        int time_taken = question_manager->time_per_question() - time_remaining;
+        if (time_taken <= 5)
+        {
+            show_celebration("Excellent! ⚡");
+        }
+        else if (time_taken <= 10)
+        {
+            show_celebration("Great job! 🎉");
         }
 
         option_buttons[selected_answer]->setProperty("answerState", "correct");

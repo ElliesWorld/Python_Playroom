@@ -11,7 +11,12 @@
 #include <QButtonGroup>
 #include <QFile>
 #include <QApplication>
-#include <QDebug>
+#include <QMenuBar>
+#include <QMenu>
+#include <QAction>
+#include <QInputDialog>
+#include <QMessageBox>
+#include <QLineEdit>
 
 #include "questions.h"
 #include "quiz.h"
@@ -32,6 +37,7 @@ private slots:
     void show_results(int score);
     void on_level_button_clicked();
     void on_quiz_mode_changed(QuizMode newMode);
+    void on_unlock_all_triggered();
 
 private:
     void setup_ui();
@@ -41,6 +47,7 @@ private:
     void load_stylesheet();
     void update_window_title();
     void update_welcome_screen_content();
+    QAction *unlock_all_action;
 
     SettingsManager *settings_manager;
     SettingsToolbar *settings_toolbar;

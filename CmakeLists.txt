@@ -48,6 +48,10 @@ qt6_add_resources(programming_quiz "resources"
         
         resources/questions_c/level0_c_basics.json
         resources/questions_c/level1_c_variables.json
+        resources/questions_c/level2_c_control.json
+        resources/questions_c/level3_c_functions.json
+        resources/questions_c/level4_c_pointers.json
+        resources/questions_c/level5_c_structures.json
         
         resources/sounds/correct.wav
         resources/sounds/wrong.wav

@@ -1,1 +1,142 @@
-{"level_info":{"id":2,"name":"C Control","description":"Placeholder","time_per_question":30,"total_questions":1,"difficulty":"Beginner"},"questions":[{"id":1,"question_text":"Placeholder question","options":["A","B","C","D"],"correct_answer":0,"explanation":"Placeholder","topic":"Control"}]}
+{
+    "level_info": {
+        "id": 2,
+        "name": "C Control Flow",
+        "description": "Mastering if statements, loops, and control structures in C",
+        "time_per_question": 35,
+        "total_questions": 10,
+        "difficulty": "Beginner"
+    },
+    "questions": [
+        {
+            "id": 1,
+            "question_text": "What is the correct syntax for an if statement in C?",
+            "options": [
+                "if x > 5:",
+                "if (x > 5)",
+                "if (x > 5) {",
+                "if x > 5 then"
+            ],
+            "correct_answer": 2,
+            "explanation": "C if statements require parentheses around the condition and use curly braces for the code block.",
+            "topic": "If Statements"
+        },
+        {
+            "id": 2,
+            "question_text": "Which loop is guaranteed to execute at least once?",
+            "options": [
+                "for loop",
+                "while loop",
+                "do-while loop",
+                "foreach loop"
+            ],
+            "correct_answer": 2,
+            "explanation": "A do-while loop checks the condition after executing the body, so it always runs at least once.",
+            "topic": "Loops"
+        },
+        {
+            "id": 3,
+            "question_text": "What does the 'break' statement do in a loop?",
+            "options": [
+                "Pauses the loop temporarily",
+                "Exits the current loop iteration",
+                "Exits the entire loop",
+                "Restarts the loop"
+            ],
+            "correct_answer": 2,
+            "explanation": "The 'break' statement immediately exits the entire loop, transferring control to the statement after the loop.",
+            "topic": "Break Statement"
+        },
+        {
+            "id": 4,
+            "question_text": "What does the 'continue' statement do?",
+            "options": [
+                "Exits the loop",
+                "Skips to the next iteration",
+                "Pauses execution",
+                "Repeats current iteration"
+            ],
+            "correct_answer": 1,
+            "explanation": "The 'continue' statement skips the rest of the current iteration and jumps to the next iteration of the loop.",
+            "topic": "Continue Statement"
+        },
+        {
+            "id": 5,
+            "question_text": "Which is the correct syntax for a for loop in C?",
+            "options": [
+                "for (int i = 0; i < 10; i++)",
+                "for i in range(10):",
+                "for (i = 0 to 10)",
+                "for i = 0; i < 10; i++"
+            ],
+            "correct_answer": 0,
+            "explanation": "C for loops have three parts separated by semicolons: initialization, condition, and increment/decrement.",
+            "topic": "For Loops"
+        },
+        {
+            "id": 6,
+            "question_text": "What is the purpose of the switch statement?",
+            "options": [
+                "To create loops",
+                "To define functions",
+                "To handle multiple conditions efficiently",
+                "To declare variables"
+            ],
+            "correct_answer": 2,
+            "explanation": "Switch statements provide an efficient way to execute different code blocks based on the value of a variable.",
+            "topic": "Switch Statements"
+        },
+        {
+            "id": 7,
+            "question_text": "What happens if you forget the 'break' in a switch case?",
+            "options": [
+                "Compilation error",
+                "The program crashes",
+                "Fall-through to next case occurs",
+                "Nothing, it's optional"
+            ],
+            "correct_answer": 2,
+            "explanation": "Without 'break', execution continues to the next case (fall-through), which is usually unintended behavior.",
+            "topic": "Switch Fall-through"
+        },
+        {
+            "id": 8,
+            "question_text": "Which logical operator represents 'AND' in C?",
+            "options": [
+                "&",
+                "&&",
+                "and",
+                "+"
+            ],
+            "correct_answer": 1,
+            "explanation": "'&&' is the logical AND operator. '&' is the bitwise AND operator, which is different.",
+            "topic": "Logical Operators"
+        },
+        {
+            "id": 9,
+            "question_text": "What does the ternary operator '? :' do?",
+            "options": [
+                "Creates a loop",
+                "Provides a shorthand if-else",
+                "Declares variables",
+                "Compares strings"
+            ],
+            "correct_answer": 1,
+            "explanation": "The ternary operator (condition ? value_if_true : value_if_false) is a compact way to write simple if-else statements.",
+            "topic": "Ternary Operator"
+        },
+        {
+            "id": 10,
+            "question_text": "What is an infinite loop?",
+            "options": [
+                "A loop that runs very slowly",
+                "A loop that never terminates",
+                "A loop with no body",
+                "A loop that runs backwards"
+            ],
+            "correct_answer": 1,
+            "explanation": "An infinite loop is one where the terminating condition is never met, causing it to run forever (or until manually stopped).",
+            "topic": "Infinite Loops"
+        }
+    ]
+}

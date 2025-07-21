@@ -24,6 +24,14 @@ MainWindow::~MainWindow()
 
 void MainWindow::setup_ui()
 {
+    QMenuBar *menu_bar = menuBar();
+    QMenu *tools_menu = menu_bar->addMenu("Edit");
+
+    unlock_all_action = new QAction("🔓 Unlock All Levels", this);
+    unlock_all_action->setToolTip("Enter unlock code to access all levels");
+    tools_menu->addAction(unlock_all_action);
+    connect(unlock_all_action, &QAction::triggered, this, &MainWindow::on_unlock_all_triggered);
+
     settings_toolbar = new SettingsToolbar(settings_manager, this);
     addToolBar(Qt::TopToolBarArea, settings_toolbar);
 
@@ -41,7 +49,7 @@ void MainWindow::setup_ui()
     central_stack->addWidget(quiz_screen);
     central_stack->addWidget(results_screen);
 
-    resize(850, 650); 
+    resize(850, 650);
 }
 
 void MainWindow::setup_welcome_screen()
@@ -304,4 +312,36 @@ void MainWindow::on_quiz_mode_changed(QuizMode newMode)
     central_stack->setCurrentWidget(welcome_screen);
 
     quiz_screen->onModeChanged();
+}
+
+void MainWindow::on_unlock_all_triggered()
+{
+    bool ok;
+    QString code = QInputDialog::getText(this,
+                                         "🔓 Unlock All Levels",
+                                         "Enter unlock code:",
+                                         QLineEdit::Password, 
+                                         "",
+                                         &ok);
+
+    if (ok && code == "1234")
+    {
+        QVector<LevelInfo> levels = question_manager->available_levels();
+        for (int i = 0; i < levels.size(); ++i)
+        {
+            question_manager->unlock_level(i);
+        }
+
+        update_level_buttons();
+
+        QMessageBox::information(this,
+                                 "Success!",
+                                 "All levels have been unlocked!");
+    }
+    else if (ok)
+    {
+        QMessageBox::warning(this,
+                             "❌ Invalid Code",
+                             "Incorrect unlock code. Please try again.");
+    }
 }
