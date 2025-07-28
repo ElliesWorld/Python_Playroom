@@ -1,0 +1,57 @@
+{
+    "book_info": {
+        "title": "C Programming Learning Book",
+        "version": "1.0.0",
+        "description": "Complete guide to C programming and system-level concepts"
+    },
+    "chapters": [
+        {
+            "title": "C Programming Foundation",
+            "description": "Understanding C and its role in computing",
+            "pages": [
+                {
+                    "title": "The C Legacy",
+                    "content": "<h2>🔧 C: The Foundation of Computing</h2><p>C, created by Dennis Ritchie in 1972, is one of the most influential programming languages ever created. It's the foundation of Unix, Linux, and countless other systems.</p><h3>Why Learn C?</h3><ul><li><strong>System Understanding:</strong> Learn how computers really work</li><li><strong>Memory Control:</strong> Direct control over memory allocation</li><li><strong>Performance:</strong> Minimal overhead, maximum speed</li><li><strong>Portability:</strong> Runs on virtually any platform</li><li><strong>Foundation:</strong> Understanding C helps with C++, Java, JavaScript</li><li><strong>Embedded Systems:</strong> Essential for microcontrollers and IoT</li></ul><h3>Where C is Used:</h3><ul><li><strong>Operating Systems:</strong> Linux kernel, Windows components</li><li><strong>Embedded Systems:</strong> Arduino, Raspberry Pi, IoT devices</li><li><strong>Databases:</strong> SQLite, PostgreSQL internals</li><li><strong>Compilers:</strong> GCC, Clang</li><li><strong>Network Protocols:</strong> TCP/IP stack implementations</li></ul><p><em>Learning C gives you a deep understanding of how software really works!</em></p>",
+                    "category": "overview"
+                },
+                {
+                    "title": "Your First C Program",
+                    "content": "<h2>🚀 Hello, World in C</h2><p>Let's start with the classic first program and understand every part:</p><h3>Complete Program:</h3><pre><code>#include &lt;stdio.h&gt;<br><br>int main() {<br>    printf(\"Hello, World!\\n\");<br>    return 0;<br>}</code></pre><h3>Breaking it Down:</h3><ul><li><strong>#include &lt;stdio.h&gt;:</strong> Includes standard input/output library</li><li><strong>int main():</strong> The main function where execution starts</li><li><strong>printf():</strong> Function to print formatted text</li><li><strong>\\n:</strong> Newline character for line break</li><li><strong>return 0:</strong> Indicates successful program completion</li></ul><h3>Enhanced Version:</h3><pre><code>#include &lt;stdio.h&gt;<br><br>int main() {<br>    char name[50];<br>    <br>    printf(\"What's your name? \");<br>    fgets(name, sizeof(name), stdin);<br>    <br>    printf(\"Hello, %s\", name);<br>    printf(\"Welcome to C programming!\\n\");<br>    <br>    return 0;<br>}</code></pre><h3>Compile and Run:</h3><pre><code>gcc hello.c -o hello<br>./hello</code></pre><h3>Common Printf Format Specifiers:</h3><ul><li><strong>%d:</strong> Integer</li><li><strong>%f:</strong> Float/double</li><li><strong>%c:</strong> Character</li><li><strong>%s:</strong> String</li><li><strong>%x:</strong> Hexadecimal</li><li><strong>%p:</strong> Pointer address</li></ul>",
+                    "category": "basics"
+                }
+            ]
+        },
+        {
+            "title": "Variables and Data Types",
+            "description": "Understanding C data types and variable declarations",
+            "pages": [
+                {
+                    "title": "Basic Data Types",
+                    "content": "<h2>🎯 C Data Types</h2><p>C provides several fundamental data types for storing different kinds of data:</p><h3>Integer Types:</h3><pre><code>int age = 25;           // Standard integer (usually 32-bit)<br>long population = 1000000L; // Long integer<br>short temp = -10;       // Short integer (usually 16-bit)<br>unsigned int count = 100; // Only positive integers</code></pre><h3>Floating Point Types:</h3><pre><code>float price = 19.99f;   // Single precision (32-bit)<br>double pi = 3.14159;    // Double precision (64-bit)</code></pre><h3>Character Type:</h3><pre><code>char grade = 'A';       // Single character (8-bit)<br>char initial = 65;      // ASCII value for 'A'</code></pre><h3>Size Information:</h3><pre><code>#include &lt;stdio.h&gt;<br><br>printf(\"int: %lu bytes\\n\", sizeof(int));<br>printf(\"double: %lu bytes\\n\", sizeof(double));<br>printf(\"char: %lu bytes\\n\", sizeof(char));</code></pre><p><strong>Note:</strong> Data type sizes may vary between systems!</p>",
+                    "category": "variables"
+                },
+                {
+                    "title": "Arrays and Strings",
+                    "content": "<h2>📚 Arrays and String Handling</h2><p>Arrays and strings in C require careful handling but offer great flexibility and performance:</p><h3>Array Fundamentals:</h3><pre><code>int main() {<br>    // Array declaration and initialization<br>    int numbers[5] = {1, 2, 3, 4, 5};<br>    char vowels[] = {'a', 'e', 'i', 'o', 'u'}; // Size inferred<br>    <br>    // Array access<br>    printf(\"First element: %d\\n\", numbers[0]);<br>    printf(\"Array size: %zu elements\\n\", sizeof(numbers)/sizeof(numbers[0]));<br>    <br>    return 0;<br>}</code></pre><h3>String Operations:</h3><pre><code>#include &lt;stdio.h&gt;<br>#include &lt;string.h&gt;<br><br>int main() {<br>    // String declaration<br>    char greeting[20] = \"Hello\";<br>    char name[] = \"World\";<br>    char message[50];<br>    <br>    // String operations<br>    strcpy(message, \"Hello, \");  // Copy string<br>    strcat(message, name);       // Concatenate<br>    strcat(message, \"!\");<br>    <br>    printf(\"%s\\n\", message);     // Output: Hello, World!<br>    printf(\"Length: %zu\\n\", strlen(message));<br>    <br>    return 0;<br>}</code></pre>",
+                    "category": "arrays"
+                }
+            ]
+        },
+        {
+            "title": "Pointers and Memory",
+            "description": "Understanding memory management and pointer concepts",
+            "pages": [
+                {
+                    "title": "Understanding Pointers",
+                    "content": "<h2>🎯 Pointers: C's Superpower</h2><p>Pointers are variables that store memory addresses. They're fundamental to C programming:</p><h3>Basic Pointer Operations:</h3><pre><code>int main() {<br>    int value = 42;<br>    int *ptr = &amp;value;     // Get address of value<br>    <br>    printf(\"Value: %d\\n\", value);        // 42<br>    printf(\"Address: %p\\n\", &amp;value);     // Memory address<br>    printf(\"Pointer: %p\\n\", ptr);        // Same address<br>    printf(\"Dereferenced: %d\\n\", *ptr);  // 42<br>    <br>    *ptr = 100;            // Change value through pointer<br>    printf(\"New value: %d\\n\", value);    // 100<br>    <br>    return 0;<br>}</code></pre><h3>Dynamic Memory Allocation:</h3><pre><code>#include &lt;stdlib.h&gt;<br><br>int main() {<br>    // Allocate memory for single integer<br>    int *ptr = (int*)malloc(sizeof(int));<br>    if (ptr == NULL) {<br>        printf(\"Memory allocation failed!\\n\");<br>        return 1;<br>    }<br>    <br>    *ptr = 42;<br>    printf(\"Value: %d\\n\", *ptr);<br>    <br>    free(ptr);  // Must free allocated memory<br>    ptr = NULL; // Avoid dangling pointer<br>    <br>    return 0;<br>}</code></pre><h3>Pointer Safety Rules:</h3><ul><li>Always initialize pointers</li><li>Check for NULL before dereferencing</li><li>Free dynamically allocated memory</li><li>Set pointers to NULL after freeing</li><li>Don't return addresses of local variables</li></ul>",
+                    "category": "pointers"
+                },
+                {
+                    "title": "Functions with Pointers",
+                    "content": "<h2>🔧 Functions and Parameter Passing</h2><p>Understanding how to pass data to functions is crucial in C:</p><h3>Pass by Value vs Pass by Reference:</h3><pre><code>// Pass by value - only changes local copy<br>void modifyValue(int x) {<br>    x = 100;<br>    printf(\"Inside function: %d\\n\", x);<br>}<br><br>// Pass by reference using pointers<br>void modifyReference(int *x) {<br>    *x = 100;<br>    printf(\"Inside function: %d\\n\", *x);<br>}<br><br>int main() {<br>    int value = 42;<br>    <br>    printf(\"Before modifyValue: %d\\n\", value);<br>    modifyValue(value);<br>    printf(\"After modifyValue: %d\\n\", value);  // Still 42<br>    <br>    printf(\"Before modifyReference: %d\\n\", value);<br>    modifyReference(&amp;value);<br>    printf(\"After modifyReference: %d\\n\", value);  // Now 100<br>    <br>    return 0;<br>}</code></pre><h3>Array Parameters:</h3><pre><code>// Arrays are always passed by reference<br>void printArray(int arr[], int size) {<br>    for (int i = 0; i &lt; size; i++) {<br>        printf(\"%d \", arr[i]);<br>    }<br>    printf(\"\\n\");<br>}<br><br>void modifyArray(int arr[], int size) {<br>    for (int i = 0; i &lt; size; i++) {<br>        arr[i] *= 2;  // Double each element<br>    }<br>}<br><br>int main() {<br>    int numbers[] = {1, 2, 3, 4, 5};<br>    int size = sizeof(numbers) / sizeof(numbers[0]);<br>    <br>    printf(\"Original: \");<br>    printArray(numbers, size);<br>    <br>    modifyArray(numbers, size);<br>    <br>    printf(\"Modified: \");<br>    printArray(numbers, size);<br>    <br>    return 0;<br>}</code></pre>",
+                    "category": "functions"
+                }
+            ]
+        }
+    ]
+}

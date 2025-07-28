@@ -374,3 +374,259 @@ QLabel#smiley_label {
     padding: 6px 12px !important;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3) !important;  
 }
+
+/* ===========================================
+   BOOK VIEWER STYLES - Add to your styles.qss
+   =========================================== */
+
+/* Book Index Page */
+QWidget#book_index {
+    background: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1,
+                               stop: 0 #f8f9fa, stop: 1 #e9ecef) !important;
+    padding: 20px !important;
+}
+
+QLabel#book_title {
+    font-size: 32px !important;
+    font-weight: bold !important;
+    color: #2c3e50 !important;
+    margin: 20px !important;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1) !important;
+    background: transparent !important;
+}
+
+QLabel#book_subtitle {
+    font-size: 18px !important;
+    color: #6c757d !important;
+    margin: 15px !important;
+    background: transparent !important;
+}
+
+QListWidget#chapter_list {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                               stop: 0 #ffffff, stop: 1 #f8f9fa) !important;
+    border: 2px solid #dee2e6 !important;
+    border-radius: 10px !important;
+    padding: 10px !important;
+    font-size: 14px !important;
+    color: #495057 !important;
+    selection-background-color: #007bff !important;
+    selection-color: white !important;
+}
+
+QListWidget#chapter_list::item {
+    padding: 12px !important;
+    margin: 2px !important;
+    border-radius: 6px !important;
+    background: transparent !important;
+}
+
+QListWidget#chapter_list::item:hover {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                               stop: 0 #e3f2fd, stop: 1 #bbdefb) !important;
+}
+
+QListWidget#chapter_list::item:selected {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                               stop: 0 #2196f3, stop: 1 #1976d2) !important;
+    color: white !important;
+    font-weight: bold !important;
+}
+
+QListWidget#page_list {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                               stop: 0 #ffffff, stop: 1 #f8f9fa) !important;
+    border: 2px solid #dee2e6 !important;
+    border-radius: 10px !important;
+    padding: 10px !important;
+    font-size: 14px !important;
+    color: #495057 !important;
+    selection-background-color: #28a745 !important;
+    selection-color: white !important;
+}
+
+QListWidget#page_list::item {
+    padding: 10px !important;
+    margin: 2px !important;
+    border-radius: 6px !important;
+    background: transparent !important;
+}
+
+QListWidget#page_list::item:hover {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                               stop: 0 #e8f5e8, stop: 1 #c8e6c9) !important;
+}
+
+QListWidget#page_list::item:selected {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                               stop: 0 #4caf50, stop: 1 #388e3c) !important;
+    color: white !important;
+    font-weight: bold !important;
+}
+
+QPushButton#book_close_button {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                               stop: 0 #dc3545, stop: 1 #c82333) !important;
+    color: #ffffff !important;
+    border: none !important;
+    padding: 12px 24px !important;
+    font-size: 14px !important;
+    font-weight: bold !important;
+    border-radius: 25px !important;
+    margin: 8px !important;
+    min-width: 140px !important;
+}
+
+QPushButton#book_close_button:hover {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                               stop: 0 #e15361, stop: 1 #d12a3a) !important;
+}
+
+/* Book Reading Page */
+QWidget#book_page {
+    background: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1,
+                               stop: 0 #e3f2fd, stop: 1 #bbdefb) !important;
+    padding: 20px !important;
+}
+
+QLabel#page_title {
+    font-size: 24px !important;
+    font-weight: bold !important;
+    color: #3e2723 !important;
+    margin: 15px 0 !important;
+    background: transparent !important;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1) !important;
+}
+
+QLabel#page_info {
+    font-size: 14px !important;
+    color: #8d6e63 !important;
+    margin: 15px 0 !important;
+    background: rgba(255,255,255,0.7) !important;
+    padding: 8px 12px !important;
+    border-radius: 15px !important;
+    border: 1px solid rgba(0,0,0,0.1) !important;
+}
+
+QTextEdit#page_content {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                               stop: 0 #ffffff, stop: 1 #fafafa) !important;
+    border: 2px solid #e0e0e0 !important;
+    border-radius: 12px !important;
+    padding: 20px !important;
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+    color: #212121 !important;
+    selection-background-color: #ffeb3b !important;
+    selection-color: #000000 !important;
+}
+
+QPushButton#book_nav_button {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                               stop: 0 #6c757d, stop: 1 #495057) !important;
+    color: #ffffff !important;
+    border: none !important;
+    padding: 10px 20px !important;
+    font-size: 13px !important;
+    font-weight: bold !important;
+    border-radius: 20px !important;
+    margin: 5px !important;
+    min-width: 100px !important;
+}
+
+QPushButton#book_nav_button:hover {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                               stop: 0 #7a8288, stop: 1 #5a6268) !important;
+}
+
+QPushButton#book_nav_button:disabled {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                               stop: 0 #adb5bd, stop: 1 #868e96) !important;
+    color: #dee2e6 !important;
+}
+
+/* Splitter styling for book index */
+QSplitter::handle:horizontal {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                               stop: 0 #e9ecef, stop: 1 #ced4da) !important;
+    width: 4px !important;
+    border-radius: 2px !important;
+}
+
+QSplitter::handle:horizontal:hover {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                               stop: 0 #007bff, stop: 1 #0056b3) !important;
+}
+
+/* Scroll area for book content */
+QScrollArea QScrollBar:vertical {
+    background: rgba(0,0,0,0.1) !important;
+    width: 12px !important;
+    border-radius: 6px !important;
+    margin: 0 !important;
+}
+
+QScrollArea QScrollBar::handle:vertical {
+    background: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 0,
+                               stop: 0 #8d6e63, stop: 1 #5d4037) !important;
+    border-radius: 6px !important;
+    min-height: 20px !important;
+}
+
+QScrollArea QScrollBar::handle:vertical:hover {
+    background: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 0,
+                               stop: 0 #a1887f, stop: 1 #6d4c41) !important;
+}
+
+QScrollArea QScrollBar::add-line:vertical,
+QScrollArea QScrollBar::sub-line:vertical {
+    border: none !important;
+    background: none !important;
+}
+
+/* Animation support for page transitions */
+QStackedWidget {
+    background: transparent !important;
+}
+
+/* Book content HTML styling overrides */
+QTextEdit#page_content h2 {
+    color: #2e7d32 !important;
+    font-size: 20px !important;
+    margin-top: 20px !important;
+    margin-bottom: 15px !important;
+}
+
+QTextEdit#page_content h3 {
+    color: #1565c0 !important;
+    font-size: 18px !important;
+    margin-top: 15px !important;
+    margin-bottom: 10px !important;
+}
+
+QTextEdit#page_content pre {
+    background-color: #f5f5f5 !important;
+    border: 1px solid #e0e0e0 !important;
+    border-radius: 6px !important;
+    padding: 12px !important;
+    font-family: "Courier New", monospace !important;
+    font-size: 14px !important;
+    color: #d32f2f !important;
+}
+
+QTextEdit#page_content code {
+    background-color: #f5f5f5 !important;
+    padding: 2px 6px !important;
+    border-radius: 3px !important;
+    font-family: "Courier New", monospace !important;
+    color: #d32f2f !important;
+}
+
+QTextEdit#page_content ul {
+    margin-left: 20px !important;
+}
+
+QTextEdit#page_content li {
+    margin-bottom: 8px !important;
+    line-height: 1.4 !important;
+}

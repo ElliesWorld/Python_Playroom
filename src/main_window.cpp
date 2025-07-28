@@ -6,8 +6,8 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), current_level_id(0), current_score(0)
 {
     settings_manager = new SettingsManager(this);
-
     question_manager = new Questions(settings_manager, this);
+    book_manager = new BookManager(settings_manager, this);
 
     setup_ui();
     load_stylesheet();
@@ -45,9 +45,14 @@ void MainWindow::setup_ui()
     connect(quiz_screen, &Quiz::quiz_completed, this, &MainWindow::show_results);
     connect(quiz_screen, &Quiz::return_to_welcome, this, &MainWindow::show_welcome);
 
+    // Create book viewer
+    book_viewer = new BookViewer(book_manager, this);
+    connect(book_viewer, &BookViewer::closeBook, this, &MainWindow::on_close_book);
+
     central_stack->addWidget(welcome_screen);
     central_stack->addWidget(quiz_screen);
     central_stack->addWidget(results_screen);
+    central_stack->addWidget(book_viewer);
 
     resize(850, 650);
 }
@@ -58,13 +63,26 @@ void MainWindow::setup_welcome_screen()
     welcome_screen->setObjectName("welcome_screen");
 
     QVBoxLayout *main_layout = new QVBoxLayout(welcome_screen);
-    main_layout->setSpacing(30);                     /* More spacing between elements */
-    main_layout->setContentsMargins(30, 30, 30, 40); /* Adjust margins */
+    main_layout->setSpacing(20);
+    main_layout->setContentsMargins(30, 30, 30, 40);
+
+    // Title and book button layout
+    QHBoxLayout *title_layout = new QHBoxLayout();
 
     title_label = new QLabel();
     title_label->setObjectName("title_label");
     title_label->setAlignment(Qt::AlignCenter);
-    main_layout->addWidget(title_label);
+
+    // Create the 3D question mark button
+    book_button = new QuestionMarkButton();
+    connect(book_button, &QPushButton::clicked, this, &MainWindow::on_book_button_clicked);
+
+    title_layout->addStretch();
+    title_layout->addWidget(title_label);
+    title_layout->addWidget(book_button);
+    title_layout->addStretch();
+
+    main_layout->addLayout(title_layout);
 
     instructions_label = new QLabel();
     instructions_label->setObjectName("instructions_label");
@@ -93,7 +111,7 @@ void MainWindow::setup_results_screen()
     results_screen->setObjectName("results_screen");
 
     QVBoxLayout *main_layout = new QVBoxLayout(results_screen);
-    main_layout->setSpacing(30);
+    main_layout->setSpacing(15);
     main_layout->setContentsMargins(40, 40, 40, 40);
 
     QLabel *results_title = new QLabel("🎉 Quiz Complete!");
@@ -217,6 +235,7 @@ void MainWindow::update_welcome_screen_content()
                                "For each question there will be information in the 'Learn More' button, "
                                "but if you click that you will lose the point for that question!\n\n"
                                "Each question earns you 1 point!\n\n"
+                               "📚 Click the ? button to open the Learning Book!\n\n"
                                "Select a level to start:")
                                .arg(languageName);
 
@@ -320,7 +339,7 @@ void MainWindow::on_unlock_all_triggered()
     QString code = QInputDialog::getText(this,
                                          "🔓 Unlock All Levels",
                                          "Enter unlock code:",
-                                         QLineEdit::Password, 
+                                         QLineEdit::Password,
                                          "",
                                          &ok);
 
@@ -344,4 +363,15 @@ void MainWindow::on_unlock_all_triggered()
                              "❌ Invalid Code",
                              "Incorrect unlock code. Please try again.");
     }
+}
+
+void MainWindow::on_book_button_clicked()
+{
+    book_viewer->showIndex();
+    central_stack->setCurrentWidget(book_viewer);
+}
+
+void MainWindow::on_close_book()
+{
+    central_stack->setCurrentWidget(welcome_screen);
 }

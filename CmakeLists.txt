@@ -24,6 +24,12 @@ qt6_add_executable(programming_quiz
     src/settings_manager.h
     src/settings_toolbar.cpp
     src/settings_toolbar.h
+    src/book_manager.cpp
+    src/book_manager.h
+    src/book_viewer.cpp
+    src/book_viewer.h
+    src/question_mark_button.cpp
+    src/question_mark_button.h
 )
 
 qt6_add_resources(programming_quiz "resources"
@@ -33,6 +39,10 @@ qt6_add_resources(programming_quiz "resources"
         resources/config.json
         resources/config_cpp.json
         resources/config_c.json
+
+        resources/python.json
+        resources/cpp.json
+        resources/c.json
 
         resources/styles.qss
 

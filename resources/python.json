@@ -1,0 +1,62 @@
+{
+    "book_info": {
+        "title": "Python Programming Learning",
+        "version": "1.0.0",
+        "description": "Complete guide to Python programming fundamentals"
+    },
+    "chapters": [
+        {
+            "title": "Introduction to Programming",
+            "description": "Basic programming concepts and Python overview",
+            "pages": [
+                {
+                    "title": "What is Programming?",
+                    "content": "<h2>🖥️ What is Programming?</h2><p>Programming is the process of creating instructions for computers to follow. Think of it like writing a recipe - you provide step-by-step directions to achieve a desired result.</p><h3>Key Concepts:</h3><ul><li><strong>Algorithm:</strong> A set of rules or instructions for solving a problem</li><li><strong>Code:</strong> Instructions written in a programming language</li><li><strong>Program:</strong> A complete set of instructions that performs a task</li></ul><p><em>Programming languages like Python help us communicate with computers!</em></p>",
+                    "category": "basics"
+                },
+                {
+                    "title": "Why Python?",
+                    "content": "<h2>🐍 Why Choose Python?</h2><p>Python is one of the most popular programming languages because it's:</p><ul><li><strong>Easy to Read:</strong> Python code is clear and straight forward</li><li><strong>Versatile:</strong> Used for web development, data science, AI, and more</li><li><strong>Beginner-Friendly:</strong> Simple syntax helps you focus on problem-solving</li><li><strong>Powerful:</strong> Can handle complex tasks with minimal code</li></ul><h3>Example:</h3><pre><code>print(\"Hello, World!\")</code></pre><p>This simple line displays text on the screen!</p>",
+                    "category": "introduction"
+                }
+            ]
+        },
+        {
+            "title": "Data Types & Variables",
+            "description": "Understanding how to store and work with data",
+            "pages": [
+                {
+                    "title": "What are Variables?",
+                    "content": "<h2>📦 Variables - Data Containers</h2><p>Variables are like labeled boxes that store information. You can put data in them, look at what's inside, and change the contents.</p><h3>Creating Variables:</h3><pre><code>name = \"Jane\"<br>age = 35<br>height = 5.6</code></pre><h3>Rules for Variable Names:</h3><ul><li>Start with a letter or underscore</li><li>Can contain letters, numbers, and underscores</li><li>Case sensitive (Age ≠ age)</li><li>No spaces allowed</li></ul><p><strong>Good names:</strong> student_name, total_score, user_age<br><strong>Not a good idea to use these names:</strong> 2names, my-var, class</p>",
+                    "category": "variables"
+                },
+                {
+                    "title": "Numbers (Integers & Floats)",
+                    "content": "<h2>🔢 Working with Numbers</h2><p>Python has two main types of numbers:</p><h3>Integers (int)</h3><p>Whole numbers without decimal points:</p><pre><code>score = 100<br>students = 25<br>temperature = -5</code></pre><h3>Floats (float)</h3><p>Numbers with decimal points:</p><pre><code>price = 19.99<br>pi = 3.14159<br>weight = 68.5</code></pre><h3>Math Operations:</h3><ul><li><code>+</code> Addition: 5 + 3 = 8</li><li><code>-</code> Subtraction: 10 - 4 = 6</li><li><code>*</code> Multiplication: 6 * 7 = 42</li><li><code>/</code> Division: 15 / 3 = 5.0</li><li><code>**</code> Power: 2 ** 3 = 8</li></ul>",
+                    "category": "numbers"
+                },
+                {
+                    "title": "Text (Strings)",
+                    "content": "<h2>📝 Working with Text</h2><p>Strings are sequences of characters - letters, numbers, symbols, and spaces.</p><h3>Creating Strings:</h3><pre><code>message = \"Hello, World!\"<br>name = 'Python'<br>quote = \"She said, 'Hello!'\"</code></pre><h3>String Operations:</h3><ul><li><strong>Concatenation:</strong> <code>\"Hello\" + \" \" + \"World\"</code> → \"Hello World\"</li><li><strong>Length:</strong> <code>len(\"Python\")</code> → 6</li><li><strong>Uppercase:</strong> <code>\"hello\".upper()</code> → \"HELLO\"</li><li><strong>Lowercase:</strong> <code>\"WORLD\".lower()</code> → \"world\"</li></ul><h3>String Formatting:</h3><pre><code>name = \"Jane\"<br>age = 35<br>message = f\"My name is {name} and I'm {age} years old\"</code></pre>",
+                    "category": "strings"
+                }
+            ]
+        },
+        {
+            "title": "Control Flow",
+            "description": "Making decisions and repeating actions in code",
+            "pages": [
+                {
+                    "title": "Making Decisions (if statements)",
+                    "content": "<h2>🤔 Making Decisions</h2><p>If statements let your program make choices based on conditions:</p><h3>Basic If Statement:</h3><pre><code>age = 18<br><br>if age >= 18:<br>    print(\"You can vote!\")<br>else:<br>    print(\"Too young to vote\")</code></pre><h3>Multiple Conditions:</h3><pre><code>score = 85<br><br>if score >= 90:<br>    grade = \"A\"<br>elif score >= 80:<br>    grade = \"B\"<br>elif score >= 70:<br>    grade = \"C\"<br>else:<br>    grade = \"F\"</code></pre><h3>Comparison Operators:</h3><ul><li><code>==</code> Equal to</li><li><code>!=</code> Not equal to</li><li><code>&gt;</code> Greater than</li><li><code>&lt;</code> Less than</li><li><code>&gt;=</code> Greater than or equal</li><li><code>&lt;=</code> Less than or equal</li></ul>",
+                    "category": "conditionals"
+                },
+                {
+                    "title": "Repeating Actions (Loops)",
+                    "content": "<h2>🔄 Loops - Repeating Code</h2><p>Loops let you repeat code multiple times without writing it over and over.</p><h3>For Loops (Counting):</h3><pre><code># Count from 1 to 5<br>for i in range(1, 6):<br>    print(f\"Count: {i}\")<br><br># Loop through a list<br>fruits = [\"apple\", \"banana\", \"orange\"]<br>for fruit in fruits:<br>    print(f\"I like {fruit}\")</code></pre><h3>While Loops (Conditions):</h3><pre><code># Keep asking until correct<br>password = \"\"<br>while password != \"secret\":<br>    password = input(\"Enter password: \")<br><br>print(\"Access granted!\")</code></pre><h3>Loop Control:</h3><ul><li><strong>break:</strong> Exit the loop immediately</li><li><strong>continue:</strong> Skip to next iteration</li></ul>",
+                    "category": "loops"
+                }
+            ]
+        }
+    ]
+}
