@@ -14,22 +14,29 @@ qt6_add_executable(programming_quiz
     src/main.cpp
     src/main_window.cpp
     src/main_window.h
-    src/quiz.cpp
-    src/quiz.h
-    src/questions.cpp
-    src/questions.h
+    src/questions/quiz.cpp
+    src/questions/quiz.h
+    src/questions/questions.cpp
+    src/questions/questions.h
     src/sound_manager.cpp
     src/sound_manager.h
-    src/settings_manager.cpp
-    src/settings_manager.h
-    src/settings_toolbar.cpp
-    src/settings_toolbar.h
-    src/book_manager.cpp
-    src/book_manager.h
-    src/book_viewer.cpp
-    src/book_viewer.h
-    src/question_mark_button.cpp
-    src/question_mark_button.h
+    src/settings/settings_manager.cpp
+    src/settings/settings_manager.h
+    src/settings/settings_toolbar.cpp
+    src/settings/settings_toolbar.h
+    src/book/book_manager.cpp
+    src/book/book_manager.h
+    src/book/book_viewer.cpp
+    src/book/book_viewer.h
+    src/book/question_mark_button.cpp
+    src/book/question_mark_button.h
+)
+
+target_include_directories(programming_quiz PRIVATE
+    src
+    src/book
+    src/settings  
+    src/questions
 )
 
 qt6_add_resources(programming_quiz "resources"
@@ -40,9 +47,9 @@ qt6_add_resources(programming_quiz "resources"
         resources/config_cpp.json
         resources/config_c.json
 
-        resources/python.json
-        resources/cpp.json
-        resources/c.json
+        resources/learning_books/python.json
+        resources/learning_books/cpp.json
+        resources/learning_books/c.json
 
         resources/styles.qss
 

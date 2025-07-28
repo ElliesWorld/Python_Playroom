@@ -17,13 +17,13 @@ QString BookManager::getBookPath() const
     switch (currentMode)
     {
     case QuizMode::Python:
-        return ":/python.json";
+        return ":/learning_books/python.json";
     case QuizMode::Cpp:
-        return ":/cpp.json";
+        return ":/learning_books/cpp.json";
     case QuizMode::C:
-        return ":/c.json";
+        return ":/learning_books/c.json";
     default:
-        return ":/python.json"; // fallback
+        return ":/learning_books/python.json"; // fallback
     }
 }
 
