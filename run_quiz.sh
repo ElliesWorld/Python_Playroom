@@ -34,9 +34,16 @@ fi
 
 print_status "Starting Programming Quiz Build Process..."
 
-# Set Qt6 paths
-export PATH="/c/Qt/6.9.1/mingw_64/bin:$PATH"
+# FORCE Qt's MinGW compiler - put it FIRST in PATH
+export PATH="/c/Qt/Tools/mingw1310_64/bin:/c/Qt/6.9.1/mingw_64/bin:$PATH"
 export CMAKE_PREFIX_PATH="C:/Qt/6.9.1/mingw_64"
+
+# Explicitly set compiler paths to Qt's MinGW
+export CC="/c/Qt/Tools/mingw1310_64/bin/gcc.exe"
+export CXX="/c/Qt/Tools/mingw1310_64/bin/g++.exe"
+
+print_status "Using Qt MinGW compiler from: $(which gcc)"
+print_status "Compiler version: $(gcc --version | head -1)"
 
 if [ ! -d "build" ]; then
     print_status "Creating build directory..."
@@ -47,13 +54,21 @@ cd build
 
 print_status "Building the project..."
 
-if [ ! -f "Makefile" ] || [ "../CMakeLists.txt" -nt "Makefile" ]; then
-    print_status "Running CMake configuration with MSYS Makefiles..."
-    cmake .. -G "MSYS Makefiles" -DCMAKE_PREFIX_PATH="$CMAKE_PREFIX_PATH"
-    if [ $? -ne 0 ]; then
-        print_error "CMake configuration failed!"
-        exit 1
-    fi
+# Always clean to avoid conflicts
+print_status "Cleaning previous build..."
+rm -rf CMakeCache.txt CMakeFiles/
+
+print_status "Running CMake configuration with Qt's MinGW..."
+
+cmake .. -G "MSYS Makefiles" \
+    -DCMAKE_PREFIX_PATH="$CMAKE_PREFIX_PATH" \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DCMAKE_C_COMPILER="$CC" \
+    -DCMAKE_CXX_COMPILER="$CXX"
+    
+if [ $? -ne 0 ]; then
+    print_error "CMake configuration failed!"
+    exit 1
 fi
 
 print_status "Compiling the project..."

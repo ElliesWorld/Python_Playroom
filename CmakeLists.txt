@@ -39,6 +39,13 @@ target_include_directories(programming_quiz PRIVATE
     src/questions
 )
 
+# Simple Windows settings - no problematic static linking
+if(WIN32)
+    set_target_properties(programming_quiz PROPERTIES
+        WIN32_EXECUTABLE TRUE
+    )
+endif()
+
 qt6_add_resources(programming_quiz "resources"
     PREFIX "/"
     BASE "resources"
